@@ -7,7 +7,6 @@
             "email": "ryan011@example.com",
             "no_hp": "081234567890",
             "created_at": "2025-06-29T19:00:00Z",
-            "history_pembelian": [],
             "status": "aktif"
         }
     ],
@@ -233,6 +232,90 @@
             "harga": 15000,
             "img": "assets/images/menu/Dimsum/Wonton Pangsit Chili Oil.webp",
             "kategori": "Dimsum"
+        },
+        {
+            "id": "SUS1",
+            "nama_menu": "Shusi Goreng",
+            "harga": 15000,
+            "img": "assets/images/menu/Sushi/Sushi Goreng.jpg",
+            "kategori": "Shusi"
+        },
+        {
+            "id": "SUS2",
+            "nama_menu": "Shusi Mentai",
+            "harga": 15000,
+            "img": "assets/images/menu/Sushi/Sushi Mentai.jpg",
+            "kategori": "Shusi"
+        },
+        {
+            "id": "SUS3",
+            "nama_menu": "Shusi Original",
+            "harga": 15000,
+            "img": "assets/images/menu/Sushi/Sushi Original.jpg",
+            "kategori": "Shusi"
+        },
+        {
+            "id": "MKN1",
+            "nama_menu": "Ayam Geprek",
+            "harga": 15000,
+            "img": "assets/images/menu/Makanan/Ayam geprek.jpg",
+            "kategori": "Makanan"
+        },
+        {
+            "id": "MKN2",
+            "nama_menu": "Ayam lava saos keju",
+            "harga": 15000,
+            "img": "assets/images/menu/Makanan/Ayam lava saos keju.jpg",
+            "kategori": "Makanan"
+        },
+        {
+            "id": "MKN3",
+            "nama_menu": "Dori Crispy",
+            "harga": 15000,
+            "img": "assets/images/menu/Makanan/Dori Crispy.jpg",
+            "kategori": "Makanan"
+        },
+        {
+            "id": "MKN4",
+            "nama_menu": "Mie Jebew",
+            "harga": 15000,
+            "img": "assets/images/menu/Makanan/Mie jebew.jpg",
+            "kategori": "Makanan"
+        },
+        {
+            "id": "MKN5",
+            "nama_menu": "Mie Tiaw",
+            "harga": 15000,
+            "img": "assets/images/menu/Makanan/Mie tiaw.jpg",
+            "kategori": "Makanan"
+        },
+        {
+            "id": "MKN6",
+            "nama_menu": "Nasi Goreng Ati Ampela",
+            "harga": 15000,
+            "img": "assets/images/menu/Makanan/Nasgor  ati ampela.jpg",
+            "kategori": "Makanan"
+        },
+        {
+            "id": "MKN7",
+            "nama_menu": "Nasi Goreng Seafood",
+            "harga": 15000,
+            "img": "assets/images/menu/Makanan/Nasgor seafood.jpg",
+            "kategori": "Makanan"
+        },
+        {
+            "id": "MKN8",
+            "nama_menu": "Nasi Goreng Telur",
+            "harga": 15000,
+            "img": "assets/images/menu/Makanan/Nasgor telur.jpg",
+            "kategori": "Makanan"
+        },
+        {
+            "id": "MKN9",
+            "nama_menu": "Nasi Goreng",
+            "harga": 15000,
+            "img": "assets/images/menu/Makanan/Nasi goreng.jpg",
+            "kategori": "Makanan"
         }
     ]
 }
