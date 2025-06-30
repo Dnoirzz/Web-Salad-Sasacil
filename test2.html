@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salad Sasacil - Fresh & Healthy Salads</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,240,245,0.9) 100%);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(252, 165, 165, 0.4);
+        }
+        
+        .nav-link:hover {
+            color: #ec4899;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, #ec4899, #f472b6);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+        }
+        
+        .footer-link:hover {
+            color: #f472b6;
+            transform: translateX(3px);
+        }
+        
+        .newsletter-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #f472b6;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-pink-500">
+                        <span class="text-pink-600">Salad</span> Sasacil
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="nav-link font-medium text-gray-700 hover:text-pink-500 transition">Home</a>
+                    <a href="#menu" class="nav-link font-medium text-gray-700 hover:text-pink-500 transition">Menu</a>
+                    <a href="#about" class="nav-link font-medium text-gray-700 hover:text-pink-500 transition">About</a>
+                    <a href="#testimonials" class="nav-link font-medium text-gray-700 hover:text-pink-500 transition">Reviews</a>
+                    <a href="#contact" class="nav-link font-medium text-gray-700 hover:text-pink-500 transition">Contact</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button class="relative text-gray-700 hover:text-pink-500">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                        <span class="absolute -top-2 -right-2 bg-pink-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                    </button>
+                    <button class="md:hidden text-gray-700 hover:text-pink-500">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+                        Fresh & Healthy <span class="text-pink-500">Salads</span> Delivered
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Enjoy our delicious, nutrient-packed salads made with the freshest ingredients. Perfect for your healthy lifestyle!
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button class="btn-primary text-white font-semibold py-3 px-8 rounded-full">
+                            Order Now
+                        </button>
+                        <button class="border-2 border-pink-500 text-pink-500 font-semibold py-3 px-8 rounded-full hover:bg-pink-50 transition">
+                            View Menu
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://img.taste.com.au/QaDKlckA/taste/2016/11/fresh-summer-vegetable-salad-91664-1.jpeg" 
+                         alt="Fresh Salad" 
+                         class="rounded-2xl shadow-xl w-full max-w-md transform rotate-2 hover:rotate-0 transition duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-pink-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Why Choose Our Salads</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    We're committed to providing the highest quality ingredients and delicious flavors to support your healthy lifestyle.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition text-center">
+                    <div class="bg-pink-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-leaf text-2xl text-pink-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Fresh Ingredients</h3>
+                    <p class="text-gray-600">
+                        Locally sourced, organic vegetables and fruits delivered daily for maximum freshness.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition text-center">
+                    <div class="bg-pink-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heart text-2xl text-pink-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Healthy Options</h3>
+                    <p class="text-gray-600">
+                        Nutrient-packed salads with balanced macros to fuel your body and satisfy your taste buds.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition text-center">
+                    <div class="bg-pink-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-bolt text-2xl text-pink-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Quick Delivery</h3>
+                    <p class="text-gray-600">
+                        Get your fresh salad delivered to your door in under 30 minutes or pick it up at our store.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Our Signature Salads</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Explore our delicious selection of salads, each carefully crafted for flavor and nutrition.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="relative">
+                        <img src="https://www.recipetineats.com/tachyon/2021/08/Garden-Salad_48.jpg?resize=900%2C1260&zoom=0.72" 
+                             alt="Garden Fresh Salad" 
+                             class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-pink-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                            BESTSELLER
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold">Garden Fresh</h3>
+                            <span class="text-pink-500 font-bold">$9.99</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Mixed greens, cherry tomatoes, cucumber, carrots, red onion, and croutons with your choice of dressing.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-1 text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="text-gray-500 text-sm ml-1">(48)</span>
+                            </div>
+                            <button class="btn-primary text-white text-sm font-semibold py-2 px-4 rounded-full">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1546793665-c74683f339c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Mediterranean Salad" 
+                             class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold">Mediterranean</h3>
+                            <span class="text-pink-500 font-bold">$11.99</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Romaine, kalamata olives, feta cheese, cherry tomatoes, cucumber, red onion, and Greek dressing.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-1 text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span class="text-gray-500 text-sm ml-1">(36)</span>
+                            </div>
+                            <button class="btn-primary text-white text-sm font-semibold py-2 px-4 rounded-full">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" 
+                             alt="Asian Crunch Salad" 
+                             class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-pink-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                            NEW
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold">Asian Crunch</h3>
+                            <span class="text-pink-500 font-bold">$10.99</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Napa cabbage, carrots, edamame, mandarin oranges, crispy wontons, and sesame ginger dressing.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-1 text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="text-gray-500 text-sm ml-1">(24)</span>
+                            </div>
+                            <button class="btn-primary text-white text-sm font-semibold py-2 px-4 rounded-full">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="border-2 border-pink-500 text-pink-500 font-semibold py-3 px-8 rounded-full hover:bg-pink-50 transition">
+                    View Full Menu
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-pink-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <img src="https://huiyuan89.wordpress.com/wp-content/uploads/2010/09/img_2016.jpg" 
+                         alt="Our Kitchen" 
+                         class="rounded-2xl shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6">Our Story</h2>
+                    <p class="text-gray-600 mb-4">
+                        Founded in 2020, Salad Sasacil began as a small farmers market stand with a simple mission: to make healthy eating delicious and accessible.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Today, we've grown into a beloved local salad destination, but we've stayed true to our roots. Every salad is still prepared fresh daily using the highest quality ingredients from trusted local suppliers.
+                    </p>
+                    <div class="flex items-center">
+                        <div class="bg-pink-100 p-4 rounded-full mr-4">
+                            <i class="fas fa-seedling text-2xl text-pink-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Farm to Table</h4>
+                            <p class="text-gray-600 text-sm">We partner with local farms for the freshest produce</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center mt-4">
+                        <div class="bg-pink-100 p-4 rounded-full mr-4">
+                            <i class="fas fa-heartbeat text-2xl text-pink-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Nutrition First</h4>
+                            <p class="text-gray-600 text-sm">Every salad is crafted with your health in mind</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">What Our Customers Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Don't just take our word for it - hear from our happy customers!
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex space-x-1 text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-500 text-sm">2 days ago</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "The Mediterranean salad is my absolute favorite! Fresh ingredients every time and the perfect portion size. I order at least twice a week!"
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" 
+                             alt="Sarah J." 
+                             class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-semibold">Sarah J.</h4>
+                            <p class="text-gray-500 text-sm">Regular Customer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex space-x-1 text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-gray-500 text-sm">1 week ago</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "As someone who's trying to eat healthier, Salad Sasacil has been a game changer. The Asian Crunch salad is so flavorful I don't even miss junk food!"
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" 
+                             alt="Michael T." 
+                             class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-semibold">Michael T.</h4>
+                            <p class="text-gray-500 text-sm">New Customer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex space-x-1 text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-500 text-sm">3 weeks ago</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "I've tried every salad place in town and none compare to Salad Sasacil. The ingredients are always fresh and the dressings are amazing. 10/10 recommend!"
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" 
+                             alt="Jessica L." 
+                             class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-semibold">Jessica L.</h4>
+                            <p class="text-gray-500 text-sm">Loyal Customer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-pink-500 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">Join Our Salad Club</h2>
+                <p class="mb-8">
+                    Subscribe to our newsletter and get 10% off your first order plus exclusive recipes and health tips!
+                </p>
+                <div class="flex flex-col sm:flex-row max-w-md mx-auto">
+                    <input type="email" 
+                           placeholder="Your email address" 
+                           class="newsletter-input flex-grow px-4 py-3 rounded-l-full sm:rounded-r-none rounded-r-full mb-2 sm:mb-0 text-gray-800 focus:outline-none">
+                    <button class="bg-white text-pink-500 font-semibold px-6 py-3 rounded-r-full sm:rounded-l-none rounded-l-full hover:bg-pink-100 transition">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Contact Us</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Have questions or feedback? We'd love to hear from you!
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Get in Touch</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-pink-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-pink-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Address</h4>
+                                <p class="text-gray-600">123 Green Street, Healthyville, HV 12345</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-pink-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-pink-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Phone</h4>
+                                <p class="text-gray-600">(123) 456-7890</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-pink-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-pink-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Email</h4>
+                                <p class="text-gray-600">hello@saladsasacil.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-pink-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-clock text-pink-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Hours</h4>
+                                <p class="text-gray-600">Monday - Friday: 10am - 8pm</p>
+                                <p class="text-gray-600">Saturday - Sunday: 11am - 6pm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Send Us a Message</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <input type="text" 
+                                   placeholder="Your Name" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-transparent">
+                        </div>
+                        <div>
+                            <input type="email" 
+                                   placeholder="Your Email" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-transparent">
+                        </div>
+                        <div>
+                            <input type="text" 
+                                   placeholder="Subject" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-transparent">
+                        </div>
+                        <div>
+                            <textarea rows="4" 
+                                      placeholder="Your Message" 
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-transparent"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary text-white font-semibold py-3 px-6 rounded-lg">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-pink-500 mb-4">
+                        <span class="text-pink-600">Salad</span> Sasacil
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Fresh, healthy, and delicious salads made with love and the finest ingredients.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-600 hover:text-pink-500 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-pink-500 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-pink-500 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-pink-500 transition">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="footer-link text-gray-600 hover:text-pink-500 transition">Home</a></li>
+                        <li><a href="#menu" class="footer-link text-gray-600 hover:text-pink-500 transition">Our Menu</a></li>
+                        <li><a href="#about" class="footer-link text-gray-600 hover:text-pink-500 transition">About Us</a></li>
+                        <li><a href="#testimonials" class="footer-link text-gray-600 hover:text-pink-500 transition">Testimonials</a></li>
+                        <li><a href="#contact" class="footer-link text-gray-600 hover:text-pink-500 transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Our Menu</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="footer-link text-gray-600 hover:text-pink-500 transition">Garden Fresh</a></li>
+                        <li><a href="#" class="footer-link text-gray-600 hover:text-pink-500 transition">Mediterranean</a></li>
+                        <li><a href="#" class="footer-link text-gray-600 hover:text-pink-500 transition">Asian Crunch</a></li>
+                        <li><a href="#" class="footer-link text-gray-600 hover:text-pink-500 transition">Caesar</a></li>
+                        <li><a href="#" class="footer-link text-gray-600 hover:text-pink-500 transition">Seasonal Specials</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Contact Info</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-600">123 Green Street</li>
+                        <li class="text-gray-600">Healthyville, HV 12345</li>
+                        <li class="text-gray-600">(123) 456-7890</li>
+                        <li class="text-gray-600">hello@saladsasacil.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 mt-12 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2023 Salad Sasacil. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div class="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center hidden" id="mobileMenu">
+        <button class="absolute top-4 right-4 text-gray-700" id="closeMenu">
+            <i class="fas fa-times text-2xl"></i>
+        </button>
+        <div class="text-center space-y-6">
+            <a href="#" class="block text-xl font-medium text-gray-700 hover:text-pink-500">Home</a>
+            <a href="#menu" class="block text-xl font-medium text-gray-700 hover:text-pink-500">Menu</a>
+            <a href="#about" class="block text-xl font-medium text-gray-700 hover:text-pink-500">About</a>
+            <a href="#testimonials" class="block text-xl font-medium text-gray-700 hover:text-pink-500">Reviews</a>
+            <a href="#contact" class="block text-xl font-medium text-gray-700 hover:text-pink-500">Contact</a>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuToggle = document.querySelector('.md\\:hidden button');
+            const closeMenu = document.getElementById('closeMenu');
+            
+            menuToggle.addEventListener('click', function() {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('flex');
+            });
+            
+            closeMenu.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                            mobileMenu.classList.remove('flex');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
