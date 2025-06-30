@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salad Sasacil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Marko+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      margin: 0;
+      background: #FCDEE4;
+      color: #3a1a2f;
+      scroll-behavior: smooth;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #fae0e6;
+      box-shadow: 0 2px 6px rgba(212, 202, 204, 0.23);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      padding: 0 30px;
+      height: 70px;
+    }
+    .logo h1 {
+      font-family: 'Marko One', serif;
+      font-size: 24px;
+      color: #3a1a2f;
+      display: flex;
+      align-items: center;
+      margin: 0;
+      gap: 10px;
+    }
+    .logo h1 span {
+      color: #e83e6c;
+    }
+    .logo img {
+      width: 50px;
+      height: auto;
+      display: block;
+    }
+    .nav-container {
+      display: none;
+      padding-left: 400px;
+    }
+    .nav-link {
+      font-weight: 600;
+      color: black;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #E91E63;
+    }
+    @media (min-width: 768px) {
+      .nav-container {
+        display: flex;
+        gap: 4rem;
+      }
+    }
+    .login-button {
+      margin-left: auto;
+      background-color: transparent;
+      color: black;
+      padding: 3px 20px;
+      border: 2px solid #e83e6c;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .login-button:hover {
+      background-color: #e83e6c;
+      color: white;
+    }
+
+    .intro {
+      margin-top: 70px;
+      background: #ffe9f1;
+      padding: 100px;
+      max-width: 2000px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .intro-content {
+      flex: 1 1 400px;
+      transform: translateX(-10px);
+    }
+    .intro-content h1 {
+      font-weight: 500;
+      font-family: 'Marko One', serif;
+      font-size: 2.75rem;
+      margin-top: 0;
+      margin-bottom: 18px;
+      line-height: 1.1;
+      color: black;
+    }
+    .intro-content h1 .fresh,
+    .intro-content h1 .salad-here {
+      font-family: 'Marko One', serif;  
+      color: #E91E63;
+    }
+    .intro-content p {
+      font-size: 1rem;
+      line-height: 1;
+      max-width: 600px;
+      margin-bottom: 25px;
+      color: black;
+    }
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    @media (min-width: 640px) {
+      .button-group {
+        flex-direction: row;
+      }
+    }
+    .btn-primary {
+      background-color: transparent;
+      color: black;
+      font-weight: 600;
+      padding: 5px 22px;
+      border: 2px solid #E91E63;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .btn-primary:hover {
+      background-color: #e83e6c;
+      color: white;
+    }
+    .social.icon {
+      display: flex;
+      gap: 16px;
+      margin-top: 25px;
+    }
+    .social.icon a img {
+      width: 28px;
+      height: 28px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .social.icon a:hover img {
+      transform: scale(1.15);
+      opacity: 0.75;
+    }
+
+    .slider-container {
+      max-width: 300px;
+      position: relative;
+      transform: translateX(-50px);
+    }
+    .slider {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+    .slide {
+      width: 100%;
+      display: none;
+      border-radius: 1rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+    .slide.active {
+      display: block;
+    }
+    .dots {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .dot {
+      height: 10px;
+      width: 10px;
+      margin: 0 4px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .dot.active {
+      background-color: #e83e6c;
+      transform: scale(1.5);
+    }
+
+    /* Menu Section */
+    .menu-section {
+      background-image: url('assets/images/background.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      gap: 300px;
+      justify-content: space-between;
+    }
+
+    .menu-section h1 {
+      padding-left: 60px;
+      font-family: 'Marko One', serif;  
+      font-size: 32px;
+      margin: 0 0;
+      color: black;
+    }
+
+    .menu-section h1 span {
+      font-family: 'Marko One', serif;    
+      display: block;
+      font-size: 32px;
+      color: #e91e63;
+    }
+
+    .menu-section .arrow-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .circle-btn {
+      position: relative;
+      left: 60px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .circle-btn.outline {
+      background: transparent;
+      border: 2px solid #e91e63;
+      color: #e91e63;
+    }
+
+    .circle-btn.outline:hover {
+      background: #e91e63;
+      border: none;
+      color: #fff;
+    }
+
+    .menu-cards {
+      display: flex;
+      gap: 30px;
+      overflow-x: auto;
+      flex-grow: 1;
+    }
+
+    .menu-card {
+      background: #f6f6f6;
+      width: 120px;
+      min-width: 120px;
+      padding: 40px 10px;
+      border-radius: 100px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .image-placeholder {
+      width: 70px;
+      height: 70px;
+      background: #ccc;
+      border-radius: 50%;
+      margin: 0 auto 10px auto;
+      overflow: hidden;
+      display: flex;
+    }
+
+    .image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+
+    .menu-title {
+      font-weight: 600;
+      color: #000;
+      margin: 0;
+    }
+
+    .menu-title:hover {
+      color: #e91e63;
+    }
+
+    .menu-sub {
+      font-size: 12px;
+      color: #888;
+      margin: 4px 0 0 0;
+    }
+
+    /* Recomend Section */
+    .recomend {
+      background: #ffe9f1;
+      padding: 86px;
+      max-width: 2000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .recomend-content {
+      max-width: 2000px;
+      margin: 0 auto;
+    }
+    .recomend-content h1 {
+      font-weight: 500;
+      font-family: 'Marko One', serif;
+      font-size: 2.75rem;
+      margin-top: 0;
+      margin-bottom: 18px;
+      line-height: 1.1;
+      color: black;
+    }
+    .recomend-content h1 .best,
+    .recomend-content h1 .you {
+      font-family: 'Marko One', serif;  
+      color: #E91E63;
+    }
+    .recomend-content p {
+      position: relative;
+      left: 2px;  
+      font-size: 1rem;
+      line-height: 1.5;
+      max-width: 600px;
+      margin-bottom: 5px;
+      color: black;
+    }
+
+    .recomend-cards-container {
+      position: relative;  
+      left: 80px;
+      display: flex;
+      max-width: 1200px;
+      gap: 60px;
+      overflow-x: auto;
+      padding: 20px 0;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .recomend-card {
+      width: 250px;
+      height: 350px;
+      border: 2px solid #e83e6c;
+      border-radius: 20px;
+      overflow: hidden;
+      background: transparent;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+
+    .recomend-card:hover {
+      background: #E4A7AF;  
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .card-image {
+      width: 100%;
+      height: 55%;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-body {
+      padding: 12px;
+      text-align: left;
+    }
+
+    .rating {
+      font-size: 10px;
+      background: transparent;
+      border: 2px solid #E91E63;
+      color: black;
+      padding: 2px 6px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 18px;
+      margin: 0;
+      padding-bottom: 1px;
+    }
+
+    .card-price {
+      font-size: 16px;
+      color: #888;
+      margin: 0;
+      padding-bottom: 2px;
+    }
+
+    .card-button {
+      background: #e83e6c;
+      color: white;
+      border: none;
+      padding: 10px 12px;
+      font-size: 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      float: right;
+      transition: background-color 0.3s ease;
+    }
+
+    .card-button:hover {
+      background: #d72d5b;
+    }
+
+    .recomend-arrows { 
+      position: relative;
+      right: 80px;  
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 10px;
+      gap: 10px;
+    }
+
+    .circle-btnR {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .circle-btnR.outline {
+      background: transparent;
+      border: 2px solid #e91e63;
+      color: #e91e63;
+    }
+
+    .circle-btnR.outline:hover {
+      background: #e91e63;
+      color: #fff;
+    }
+
+    /* Hide scrollbar but keep functionality */
+    .recomend-cards-container::-webkit-scrollbar {
+      display: none;
+    }
+    .recomend-cards-container {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1><img src="assets/images/sasacil logo.png" alt="sasacil">Salad<span>Sasacil</span></h1>
+    </div>
+    <div class="nav-container">
+      <a href="#" class="nav-link">Home</a>
+      <a href="#menu" class="nav-link">Menu</a>
+      <a href="#testimonials" class="nav-link">Service</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+    <a href="login.html" class="login-button">Login</a>
+  </header>
+  <!-- Intro Section -->
+  <section class="intro">
+    <div class="intro-content">
+      <h1>Find <span class="fresh">fresh</span> and <br />Delicious fruits <span class="salad-here">salad here!</span></h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate qui porro minus, 
+        velit pariatur fuga suscipit possimus reiciendis distinctio, vero iure rerum voluptatum dolorem accusantium voluptas dolorum, nobis illum sed!</p>
+      <div class="button-group">
+        <button class="btn-primary">Shop now</button>
+        <button class="btn-primary">Contact</button>
+      </div>
+      <div class="social icon">
+        <a href="https://api.whatsapp.com/send/?phone=62895329099339&text&type=phone_number&app_absent=0" target="_blank">
+          <img src="assets/icon/whatsapp black.png" alt="Whatsapp">
+        </a>
+        <a href="https://www.instagram.com/saladsasacil/" target="_blank">
+          <img src="assets/icon/instagram black.png" alt="Instagram">
+        </a>
+        <a href="https://www.tiktok.com/@saladsasacil?is_from_webapp=1&sender_device=pc" target="_blank">
+          <img src="assets/icon/tiktok black.png" alt="Tiktok">
+        </a>
+      </div>
+    </div>
+
+    <div class="slider-container">
+      <div class="slider">
+        <img src="assets/images/menu/Salad/Salad Buah 500ml Taro.webp" class="slide active" alt="Salad 1">
+        <img src="assets/images/menu/Salad/Salad Buah 500ml Original.webp" class="slide" alt="Salad 2">
+        <img src="assets/images/menu/Salad/Salad Buah 500ml Cream Cheese.webp" class="slide" alt="Salad 3">
+      </div>
+      <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+  </section>
+  <!-- Menu Section -->
+  <section class="menu-section">
+    <div class="h1">
+      <h1>Menu <br><span class="category">Our Category</span></h1>
+      <div class="arrow-buttons">
+        <button class="circle-btn outline"><i class="fas fa-arrow-left"></i></button>
+        <button class="circle-btn outline"><i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+    <div class="menu-cards">
+    <div class="menu-card active">
+      <div class="image-placeholder"><img src="assets/images/menu/Salad/salad Buah 300ml Cream Cheese.webp" alt="Salad"></div>
+      <p class="menu-title active">Salad</p>
+      <p class="menu-sub">12 Items</p>
+    </div>
+    <div class="menu-card">
+      <div class="image-placeholder"><img src="assets/images/menu/drink/Avocado Smoothies.png" alt="Drink"></div>
+      <p class="menu-title">Drink</p>
+      <p class="menu-sub">12 Items</p>
+    </div>
+    <div class="menu-card">
+      <div class="image-placeholder"><img src="assets/images/menu/Seblak/Seblak Ceker.jpg" alt="Seblak"></div>
+      <p class="menu-title">Seblak</p>
+      <p class="menu-sub">12 Items</p>
+    </div>
+    <div class="menu-card">
+      <div class="image-placeholder"><img src="assets/images/menu/Sushi/Sushi Mentai.jpg" alt="Shusi"></div>
+      <p class="menu-title">Shusi</p>
+      <p class="menu-sub">12 Items</p>
+    </div>
+    <div class="menu-card">
+      <div class="image-placeholder"><img src="assets/images/menu/Dimsum/Dimsum ayam.jpg" alt="Dimsum"></div>
+      <p class="menu-title">Dimsum</p>
+      <p class="menu-sub">12 Items</p>
+    </div>
+  </div>
+  </section>
+  <!-- Recomend Section -->
+  <section class="recomend">
+    <div class="recomend-content">
+      <h1>Our <span class="best">Best Menu </span>for <span class="you">You</span></h1>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam sunt ex natus quaerat optio, 
+        at ratione magni! Quos quae corrupti quo, dolores facere perspiciatis! Error eaque neque doloribus cupiditate accusantium?</p>
+            <div class="recomend-arrows">
+        <button class="circle-btnR outline"><i class="fas fa-arrow-left"></i></button>
+        <button class="circle-btnR outline"><i class="fas fa-arrow-right"></i></button>
+      </div>
+      <div class="recomend-cards-container">
+        <!-- Card 1 -->
+        <div class="recomend-card">
+          <div class="card-image">
+            <img src="assets/images/menu/Salad/Salad Buah 500ml Cream Cheese.webp" alt="Salad">
+          </div>
+          <div class="card-body">
+            <div class="rating"><i class="fas fa-star"></i> 4.5</div>
+            <p class="card-title">Salad Buah Cream Cheese</p>
+            <p class="card-price">Rp 15.000,00</p>
+            <button class="card-button">Order Now</button>
+          </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="recomend-card">
+          <div class="card-image">
+            <img src="assets/images/menu/Salad/Salad Buah 500ml Taro.webp" alt="Salad">
+          </div>
+          <div class="card-body">
+            <div class="rating"><i class="fas fa-star"></i> 4.8</div>
+            <p class="card-title">Salad Buah Taro</p>
+            <p class="card-price">Rp 20.000,00</p>
+            <button class="card-button">Order Now</button>
+          </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="recomend-card">
+          <div class="card-image">
+            <img src="assets/images/menu/Salad/Salad Buah 500ml Original.webp" alt="Salad">
+          </div>
+          <div class="card-body">
+            <div class="rating"><i class="fas fa-star"></i> 4.7</div>
+            <p class="card-title">Salad Buah Original</p>
+            <p class="card-price">Rp 18.000,00</p>
+            <button class="card-button">Order Now</button>
+          </div>
+        </div>
+        
+        <!-- Card 4 -->
+        <div class="recomend-card">
+          <div class="card-image">
+            <img src="assets/images/menu/drink/Avocado Smoothies.png" alt="Drink">
+          </div>
+          <div class="card-body">
+            <div class="rating"><i class="fas fa-star"></i> 4.6</div>
+            <p class="card-title">Avocado Smoothies</p>
+            <p class="card-price">Rp 12.000,00</p>
+            <button class="card-button">Order Now</button>
+          </div>
+        </div>
+        
+        <!-- Card 5 -->
+        <div class="recomend-card">
+          <div class="card-image">
+            <img src="assets/images/menu/drink/Dragon Fruit Smoothies.png" alt="Drink">
+          </div>
+          <div class="card-body">
+            <div class="rating"><i class="fas fa-star"></i> 4.9</div>
+            <p class="card-title">Dragon Fruit Smoothies</p>
+            <p class="card-price">Rp 15.000,00</p>
+            <button class="card-button">Order Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Slider for intro section
+    let currentIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+    const dots = document.querySelectorAll(".dot");
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+        dots[i].classList.toggle("active", i === index);
+      });
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }
+
+    setInterval(nextSlide, 3000);
+
+    // Scroll functionality for recommendation cards
+    const cardsContainer = document.querySelector('.recomend-cards-container');
+    const leftBtn = document.querySelector('.circle-btnR.outline:first-child');
+    const rightBtn = document.querySelector('.circle-btnR.outline:last-child');
+
+    leftBtn.addEventListener('click', () => {
+      cardsContainer.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+
+    rightBtn.addEventListener('click', () => {
+      cardsContainer.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+
+    // Scroll functionality for menu cards
+    const menuCardsContainer = document.querySelector('.menu-cards');
+    const menuLeftBtn = document.querySelector('.menu-section .circle-btn.outline:first-child');
+    const menuRightBtn = document.querySelector('.menu-section .circle-btn.outline:last-child');
+
+    if (menuLeftBtn && menuRightBtn) {
+      menuLeftBtn.addEventListener('click', () => {
+        menuCardsContainer.scrollBy({ left: -150, behavior: 'smooth' });
+      });
+
+      menuRightBtn.addEventListener('click', () => {
+        menuCardsContainer.scrollBy({ left: 150, behavior: 'smooth' });
+      });
+    }
+  </script>
+</body>
+</html>

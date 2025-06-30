@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Salad Sasacil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Marko+One&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #fffaf8;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 100vw;
+      height: 100vh;
+      background-color: #fffaf8;
+    }
+
+    .left {
+      padding: 80px 40px 40px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      position: relative;
+      z-index: 1;
+    }
+
+    .back {
+      position: absolute;
+      top: 40px;
+      left: 38px;
+      cursor: pointer;
+    }
+
+    .back img {
+      width: 50px; 
+      height: auto;
+    }
+
+    .left h2 {
+      font-family: 'Marko One', serif;
+      font-size: 48px;
+      margin-bottom: 40px;
+      padding-left: 105px;
+    }
+
+    .left h2 span {
+      color: #e83e6c;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 20px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 15px 50px 15px 15px;
+      border: 2px solid #ff6f7d;
+      border-radius: 8px;
+      background: transparent;
+      color: #333;
+      font-size: 14px;
+    }
+
+    .input-group img {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+    }
+
+    .forgot {
+      font-size: 12px;
+      text-align: left;
+      max-width: 400px;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .forgot a {
+      text-decoration: none;
+      color: #e83e6c;
+    }
+
+    .btn-register {
+      width: 100%;
+      max-width: 400px;
+      padding: 15px;
+      background-color: #ff6f7d;
+      border: none;
+      border-radius: 30px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      color: #000;
+      margin-bottom: 30px;
+    }
+
+    .social-wrapper {
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .social-login {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 12px;
+      color: #777;
+      margin: 20px 0 10px;
+    }
+
+    .social-login::before,
+    .social-login::after {
+      position: relative;
+      z-index: 0;
+      content: "";
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(to right, transparent, #ff7f83);
+    }
+
+    .social-login::after {
+      background: linear-gradient(to left, transparent, #ff7f83);
+    }
+
+    .social-login span {
+      padding: 0 10px;
+      white-space: nowrap;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social-icons a {
+    display: inline-block;
+    z-index: 1;
+    position: relative;
+    }
+
+    .social-icons img {
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+    }
+
+    .signin {
+      font-size: 12px;
+      color: #999;
+      padding-left: 98px;
+      padding-top: 15px;
+    }
+
+    .signin a {
+      color: #e83e6c;
+      text-decoration: none;
+    }
+
+    .right {
+      position: relative;
+      background-color: #fffaf8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .right svg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 135%;
+    }
+
+    .right-content {
+      position: relative;
+      z-index: 1;
+      padding-left: 150px;
+      padding-top: 150px;
+      color: black;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .right h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 0px;
+    }
+
+    .right p {
+      font-size: 14px;
+      line-height: 1.6;
+      max-width:550px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .right {
+        display: none;
+      }
+
+      .left h2 {
+        font-size: 36px;
+      }
+
+      .input-group input {
+        font-size: 16px;
+        padding: 12px;
+      }
+
+      .btn-register {
+        font-size: 16px;
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- LEFT SIDE -->
+    <div class="left">
+      <a href="index.html" class="back">
+        <img src="assets/icon/go-back.png" alt="Back">
+      </a>
+      <h2>Sign <span>Up</span></h2>
+
+      <div class="input-group">
+        <input type="text" placeholder="Username" />
+        <img src="assets/icon/user.png" alt="user">
+      </div>
+
+      <div class="input-group">
+        <input type="text" placeholder="Email" />
+        <img src="assets/icon/email.png" alt="email">
+      </div>
+
+      <div class="input-group">
+        <input type="handphone" placeholder="No Handphone" />
+        <img src="assets\icon\phone.png" alt="tlpn">
+      </div>
+
+      <div class="input-group">
+        <input type="password" placeholder="Password" />
+        <img src="assets\icon\lock-padlock-symbol-for-protect_icon-icons.com_56926.png" alt="lock">
+      </div>
+
+      <div class="forgot">
+        <a href="#">Forgot Password?</a>
+      </div>
+
+      <button class="btn-register">Registrasi</button>
+
+      <div class="social-wrapper">
+        <div class="social-login">
+          <span>Or Sign in With</span>
+        </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/" target="_blank">
+          <img src="assets/icon/facebook.png" alt="Facebook">
+        </a>
+        <a href="https://accounts.google.com/signin" target="_blank">
+          <img src="assets/icon/google.png" alt="Google">
+        </a>
+      </div>
+      </div>
+
+      <div class="signin">
+        Already have an account? <a href="login.html">Sign In</a>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+        <!-- Dibuat agak tumpul di atas -->
+        <polygon fill="#ff6f7d" points="75,0 100,0 100,100 0,100" />
+      </svg>
+      <div class="right-content">
+        <h1>HALLO FRIENDS!</h1>
+        <p>Selamat Datang Kembali SOSACIL (Sobat Salad Sasacil) untuk memesan menu yang ada di Saladsasacil.</p>
+        <p>Masukkan Username setelah itu masukkan password, lalu kamu juga bisa login menggunakan media sosial yang telah kamu daftarkan !!!</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

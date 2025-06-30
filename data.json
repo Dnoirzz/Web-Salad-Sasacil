@@ -1,0 +1,238 @@
+{
+    "admin": [
+        {
+            "id": 1,
+            "username": "admin",
+            "password": "admin",
+            "email": "ryan011@example.com",
+            "no_hp": "081234567890",
+            "created_at": "2025-06-29T19:00:00Z",
+            "history_pembelian": [],
+            "status": "aktif"
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "username": "Ryan10",
+            "password": "123",
+            "email": "ryan01@example.com",
+            "no_hp": "081234567890",
+            "created_at": "2025-06-29T19:00:00Z",
+            "history_pembelian": [],
+            "status": "aktif"
+        }
+    ],
+    "menu": [
+        {
+            "id": "SAL1",
+            "nama_menu": "Salad Buah 500ml Cream Cheese",
+            "harga": 12000,
+            "img": "assets/images/menu/Salad/Salad Buah 500ml Cream Cheese.webp",
+            "kategori": "Salad"
+        },
+        {
+            "id": "SAL2",
+            "nama_menu": "Salad Buah 500ml Taro",
+            "harga": 12000,
+            "img": "assets/images/menu/Salad/Salad Buah 500ml Taro.webp",
+            "kategori": "Salad"
+        },
+        {
+            "id": "SAL3",
+            "nama_menu": "Salad Buah 500ml Original",
+            "harga": 12000,
+            "img": "assets/images/menu/Salad/Salad Buah 500ml Original.webp",
+            "kategori": "Salad"
+        },
+        {
+            "id": "SAL4",
+            "nama_menu": "Salad Buah 300ml Red Velvet",
+            "harga": 12000,
+            "img": "assets/images/menu/Salad/Salad Buah 300 ml Red Velvet.webp",
+            "kategori": "Salad"
+        },
+        {
+            "id": "SAL5",
+            "nama_menu": "Salad Buah 300ml Cream Cheese",
+            "harga": 12000,
+            "img": "assets/images/menu/Salad/Salad Buah 300ml Cream Cheese.webp",
+            "kategori": "Salad"
+        },
+        {
+            "id": "SAL6",
+            "nama_menu": "Salad Buah 300ml Matcha",
+            "harga": 12000,
+            "img": "assets/images/menu/Salad/Salad Buah 300ml Matcha.webp",
+            "kategori": "Salad"
+        },
+        {
+            "id": "SAL7",
+            "nama_menu": "Salad Buah 300ml Original",
+            "harga": 12000,
+            "img": "assets/images/menu/Salad/Salad Buah 300ml original.webp",
+            "kategori": "Salad"
+        },
+        {
+            "id": "SAL8",
+            "nama_menu": "Salad Buah 300ml Taro",
+            "harga": 12000,
+            "img": "assets/images/menu/Salad/Salad Buah 300ml Taro.webp",
+            "kategori": "Salad"
+        },
+        {
+            "id": "DRI1",
+            "nama_menu": "Avocado Smoothies",
+            "harga": 12000,
+            "img": "assets/images/menu/drink/Avocado Smoothies.png",
+            "kategori": "Drink"
+        },
+        {
+            "id": "DRI2",
+            "nama_menu": "Dragon Fruit Smoothies",
+            "harga": 15000,
+            "img": "assets/images/menu/drink/Dragon Fruit Smoothies.png",
+            "kategori": "Drink"
+        },
+        {
+            "id": "DRI3",
+            "nama_menu": "Mango Smoothies",
+            "harga": 12000,
+            "img": "assets/images/menu/drink/Mango Smoothies.png",
+            "kategori": "Drink"
+        },
+        {
+            "id": "DRI4",
+            "nama_menu": "Strawberry Smoothies",
+            "harga": 12000,
+            "img": "assets/images/menu/drink/Strawberry Smoothies.png",
+            "kategori": "Drink"
+        },
+        {
+            "id": "DRI5",
+            "nama_menu": "Es Teller Sultan",
+            "harga": 12000,
+            "img": "assets/images/menu/Drink/Es Teller Sultan.png",
+            "kategori": "Drink"
+        },
+        {
+            "id": "DRI6",
+            "nama_menu": "Choco Ice Blend",
+            "harga": 12000,
+            "img": "assets/images/menu/Drink/Choco Ice Blend.png",
+            "kategori": "Drink"
+        },
+        {
+            "id": "DRI7",
+            "nama_menu": "Es Teh Hijau",
+            "harga": 12000,
+            "img": "assets/images/menu/Drink/Es teh hijau.jpg",
+            "kategori": "Drink"
+        },
+        {
+            "id": "DRI8",
+            "nama_menu": "Lemon Tea",
+            "harga": 12000,
+            "img": "assets/images/menu/Drink/Lemon tea.jpg",
+            "kategori": "Drink"
+        },
+        {
+            "id": "DRI9",
+            "nama_menu": "Es Teh",
+            "harga": 12000,
+            "img": "assets/images/menu/Drink/Es teh.jpg",
+            "kategori": "Drink"
+        },
+        {
+            "id": "SEB1",
+            "nama_menu": "Seblak Bakso",
+            "harga": 15000,
+            "img": "assets/images/menu/Seblak/Seblak Bakso.jpg",
+            "kategori": "Seblak"
+        },
+        {
+            "id": "SEB2",
+            "nama_menu": "Seblak Ceker",
+            "harga": 15000,
+            "img": "assets/images/menu/Seblak/Seblak Ceker.jpg",
+            "kategori": "Seblak"
+        },
+        {
+            "id": "SEB3",
+            "nama_menu": "Seblak Chikuwa",
+            "harga": 15000,
+            "img": "assets/images/menu/Seblak/Seblak Chikuwa.jpg",
+            "kategori": "Seblak"
+        },
+        {
+            "id": "SEB4",
+            "nama_menu": "Seblak Original",
+            "harga": 15000,
+            "img": "assets/images/menu/Seblak/Seblak Original.jpg",
+            "kategori": "Seblak"
+        },
+        {
+            "id": "SEB5",
+            "nama_menu": "Seblak Seafood",
+            "harga": 15000,
+            "img": "assets/images/menu/Seblak/Seblak Seafood.jpg",
+            "kategori": "Seblak"
+        },
+        {
+            "id": "SEB6",
+            "nama_menu": "Seblak Sosis",
+            "harga": 15000,
+            "img": "assets/images/menu/Seblak/Seblak Sosis.jpg",
+            "kategori": "Seblak"
+        },
+        {
+            "id": "DIM1",
+            "nama_menu": "Dimsum Ayam",
+            "harga": 15000,
+            "img": "assets/images/menu/Dimsum/Dimsum ayam.jpg",
+            "kategori": "Dimsum"
+        },
+        {
+            "id": "DIM2",
+            "nama_menu": "Dimsum Ekado",
+            "harga": 15000,
+            "img": "assets/images/menu/Dimsum/Dimsum ekado.jpg",
+            "kategori": "Dimsum"
+        },
+        {
+            "id": "DIM3",
+            "nama_menu": "Dimsum Udang",
+            "harga": 15000,
+            "img": "assets/images/menu/Dimsum/Dimsum udang.jpg",
+            "kategori": "Dimsum"
+        },
+        {
+            "id": "DIM4",
+            "nama_menu": "Hakau",
+            "harga": 15000,
+            "img": "assets/images/menu/Dimsum/Hakau.jpg",
+            "kategori": "Dimsum"
+        },
+        {
+            "id": "DIM5",
+            "nama_menu": "Lumpia Kulit Tahu",
+            "harga": 15000,
+            "img": "assets/images/menu/Dimsum/Lumpia kulit tahu.jpg",
+            "kategori": "Dimsum"
+        },
+        {
+            "id": "DIM6",
+            "nama_menu": "Udang Keju",
+            "harga": 15000,
+            "img": "assets/images/menu/Dimsum/Udang keju.jpg",
+            "kategori": "Dimsum"
+        },
+        {
+            "id": "DIM7",
+            "nama_menu": "Wonton Pangsit Chili Oil",
+            "harga": 15000,
+            "img": "assets/images/menu/Dimsum/Wonton Pangsit Chili Oil.webp",
+            "kategori": "Dimsum"
+        }
+    ]
+}
