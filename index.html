@@ -50,7 +50,8 @@
     }
     .nav-container {
       display: none;
-      padding-left: 400px;
+      flex-grow: 1;
+      justify-content: center;
     }
     .nav-link {
       font-weight: 600;
@@ -84,10 +85,10 @@
     }
 
     .intro {
-      margin-top: 70px;
+      margin-top: 50px;
       background: #ffe9f1;
       padding: 100px;
-      max-width: 2000px;
+      max-width: 100vw;
       margin-left: auto;
       margin-right: auto;
       display: flex;
@@ -207,14 +208,15 @@
       padding: 30px;
       display: flex;
       align-items: center;
-      gap: 300px;
+      gap: 50px;
       justify-content: space-between;
     }
 
     .menu-section h1 {
-      padding-left: 60px;
+      padding-left: 3.75rem;
+      display: block;
       font-family: 'Marko One', serif;  
-      font-size: 32px;
+      font-size: 2rem;
       margin: 0 0;
       color: black;
     }
@@ -222,46 +224,15 @@
     .menu-section h1 span {
       font-family: 'Marko One', serif;    
       display: block;
-      font-size: 32px;
+      font-size: 2rem;
       color: #e91e63;
-    }
-
-    .menu-section .arrow-buttons {
-      display: flex;
-      gap: 10px;
-    }
-
-    .circle-btn {
-      position: relative;
-      left: 60px;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      font-size: 16px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-    }
-
-    .circle-btn.outline {
-      background: transparent;
-      border: 2px solid #e91e63;
-      color: #e91e63;
-    }
-
-    .circle-btn.outline:hover {
-      background: #e91e63;
-      border: none;
-      color: #fff;
     }
 
     .menu-cards {
       display: flex;
       gap: 30px;
-      overflow-x: auto;
       flex-grow: 1;
+      justify-content: center;
     }
 
     .menu-card {
@@ -524,10 +495,6 @@
   <section class="menu-section">
     <div class="h1">
       <h1>Menu <br><span class="category">Our Category</span></h1>
-      <div class="arrow-buttons">
-        <button class="circle-btn outline"><i class="fas fa-arrow-left"></i></button>
-        <button class="circle-btn outline"><i class="fas fa-arrow-right"></i></button>
-      </div>
     </div>
     <div class="menu-cards">
     <div class="menu-card active">
@@ -555,6 +522,11 @@
       <p class="menu-title">Dimsum</p>
       <p class="menu-sub">12 Items</p>
     </div>
+        <div class="menu-card">
+      <div class="image-placeholder"><img src="assets/images/menu\Makanan/Nasi goreng.jpg" alt="Makanan"></div>
+      <p class="menu-title">Makanan</p>
+      <p class="menu-sub">12 Items</p>
+    </div>
   </div>
   </section>
   <!-- Recomend Section -->
@@ -567,122 +539,9 @@
         <button class="circle-btnR outline"><i class="fas fa-arrow-left"></i></button>
         <button class="circle-btnR outline"><i class="fas fa-arrow-right"></i></button>
       </div>
-      <div class="recomend-cards-container">
-        <!-- Card 1 -->
-        <div class="recomend-card">
-          <div class="card-image">
-            <img src="assets/images/menu/Salad/Salad Buah 500ml Cream Cheese.webp" alt="Salad">
-          </div>
-          <div class="card-body">
-            <div class="rating"><i class="fas fa-star"></i> 4.5</div>
-            <p class="card-title">Salad Buah Cream Cheese</p>
-            <p class="card-price">Rp 15.000,00</p>
-            <button class="card-button">Order Now</button>
-          </div>
-        </div>
-        
-        <!-- Card 2 -->
-        <div class="recomend-card">
-          <div class="card-image">
-            <img src="assets/images/menu/Salad/Salad Buah 500ml Taro.webp" alt="Salad">
-          </div>
-          <div class="card-body">
-            <div class="rating"><i class="fas fa-star"></i> 4.8</div>
-            <p class="card-title">Salad Buah Taro</p>
-            <p class="card-price">Rp 20.000,00</p>
-            <button class="card-button">Order Now</button>
-          </div>
-        </div>
-        
-        <!-- Card 3 -->
-        <div class="recomend-card">
-          <div class="card-image">
-            <img src="assets/images/menu/Salad/Salad Buah 500ml Original.webp" alt="Salad">
-          </div>
-          <div class="card-body">
-            <div class="rating"><i class="fas fa-star"></i> 4.7</div>
-            <p class="card-title">Salad Buah Original</p>
-            <p class="card-price">Rp 18.000,00</p>
-            <button class="card-button">Order Now</button>
-          </div>
-        </div>
-        
-        <!-- Card 4 -->
-        <div class="recomend-card">
-          <div class="card-image">
-            <img src="assets/images/menu/drink/Avocado Smoothies.png" alt="Drink">
-          </div>
-          <div class="card-body">
-            <div class="rating"><i class="fas fa-star"></i> 4.6</div>
-            <p class="card-title">Avocado Smoothies</p>
-            <p class="card-price">Rp 12.000,00</p>
-            <button class="card-button">Order Now</button>
-          </div>
-        </div>
-        
-        <!-- Card 5 -->
-        <div class="recomend-card">
-          <div class="card-image">
-            <img src="assets/images/menu/drink/Dragon Fruit Smoothies.png" alt="Drink">
-          </div>
-          <div class="card-body">
-            <div class="rating"><i class="fas fa-star"></i> 4.9</div>
-            <p class="card-title">Dragon Fruit Smoothies</p>
-            <p class="card-price">Rp 15.000,00</p>
-            <button class="card-button">Order Now</button>
-          </div>
-        </div>
-      </div>
+      <div class="recomend-cards-container" id="recomend-container"></div>
     </div>
   </section>
-
-  <script>
-    // Slider for intro section
-    let currentIndex = 0;
-    const slides = document.querySelectorAll(".slide");
-    const dots = document.querySelectorAll(".dot");
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle("active", i === index);
-        dots[i].classList.toggle("active", i === index);
-      });
-    }
-
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % slides.length;
-      showSlide(currentIndex);
-    }
-
-    setInterval(nextSlide, 3000);
-
-    // Scroll functionality for recommendation cards
-    const cardsContainer = document.querySelector('.recomend-cards-container');
-    const leftBtn = document.querySelector('.circle-btnR.outline:first-child');
-    const rightBtn = document.querySelector('.circle-btnR.outline:last-child');
-
-    leftBtn.addEventListener('click', () => {
-      cardsContainer.scrollBy({ left: -300, behavior: 'smooth' });
-    });
-
-    rightBtn.addEventListener('click', () => {
-      cardsContainer.scrollBy({ left: 300, behavior: 'smooth' });
-    });
-
-    // Scroll functionality for menu cards
-    const menuCardsContainer = document.querySelector('.menu-cards');
-    const menuLeftBtn = document.querySelector('.menu-section .circle-btn.outline:first-child');
-    const menuRightBtn = document.querySelector('.menu-section .circle-btn.outline:last-child');
-
-    if (menuLeftBtn && menuRightBtn) {
-      menuLeftBtn.addEventListener('click', () => {
-        menuCardsContainer.scrollBy({ left: -150, behavior: 'smooth' });
-      });
-
-      menuRightBtn.addEventListener('click', () => {
-        menuCardsContainer.scrollBy({ left: 150, behavior: 'smooth' });
-      });
-    }
-  </script>
+  <script src="calldata.js"></script>
 </body>
 </html>

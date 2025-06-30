@@ -28,294 +28,336 @@
             "nama_menu": "Salad Buah 500ml Cream Cheese",
             "harga": 12000,
             "img": "assets/images/menu/Salad/Salad Buah 500ml Cream Cheese.webp",
-            "kategori": "Salad"
+            "kategori": "Salad",
+            "rating": 4.5
         },
         {
             "id": "SAL2",
             "nama_menu": "Salad Buah 500ml Taro",
             "harga": 12000,
             "img": "assets/images/menu/Salad/Salad Buah 500ml Taro.webp",
-            "kategori": "Salad"
+            "kategori": "Salad",
+            "rating": 4.2
         },
         {
             "id": "SAL3",
             "nama_menu": "Salad Buah 500ml Original",
             "harga": 12000,
             "img": "assets/images/menu/Salad/Salad Buah 500ml Original.webp",
-            "kategori": "Salad"
+            "kategori": "Salad",
+            "rating": 4.8
         },
         {
             "id": "SAL4",
             "nama_menu": "Salad Buah 300ml Red Velvet",
             "harga": 12000,
             "img": "assets/images/menu/Salad/Salad Buah 300 ml Red Velvet.webp",
-            "kategori": "Salad"
+            "kategori": "Salad",
+            "rating": 4.4
         },
         {
             "id": "SAL5",
             "nama_menu": "Salad Buah 300ml Cream Cheese",
             "harga": 12000,
             "img": "assets/images/menu/Salad/Salad Buah 300ml Cream Cheese.webp",
-            "kategori": "Salad"
+            "kategori": "Salad",
+            "rating": 4.6
         },
         {
             "id": "SAL6",
             "nama_menu": "Salad Buah 300ml Matcha",
             "harga": 12000,
             "img": "assets/images/menu/Salad/Salad Buah 300ml Matcha.webp",
-            "kategori": "Salad"
+            "kategori": "Salad",
+            "rating": 4.3
         },
         {
             "id": "SAL7",
             "nama_menu": "Salad Buah 300ml Original",
             "harga": 12000,
             "img": "assets/images/menu/Salad/Salad Buah 300ml original.webp",
-            "kategori": "Salad"
+            "kategori": "Salad",
+            "rating": 4.5
         },
         {
             "id": "SAL8",
             "nama_menu": "Salad Buah 300ml Taro",
             "harga": 12000,
             "img": "assets/images/menu/Salad/Salad Buah 300ml Taro.webp",
-            "kategori": "Salad"
+            "kategori": "Salad",
+            "rating": 4.2
         },
         {
             "id": "DRI1",
             "nama_menu": "Avocado Smoothies",
             "harga": 12000,
             "img": "assets/images/menu/drink/Avocado Smoothies.png",
-            "kategori": "Drink"
+            "kategori": "Drink",
+            "rating": 4.4
         },
         {
             "id": "DRI2",
             "nama_menu": "Dragon Fruit Smoothies",
             "harga": 15000,
             "img": "assets/images/menu/drink/Dragon Fruit Smoothies.png",
-            "kategori": "Drink"
+            "kategori": "Drink",
+            "rating": 4.7
         },
         {
             "id": "DRI3",
             "nama_menu": "Mango Smoothies",
             "harga": 12000,
             "img": "assets/images/menu/drink/Mango Smoothies.png",
-            "kategori": "Drink"
+            "kategori": "Drink",
+            "rating": 4.6
         },
         {
             "id": "DRI4",
             "nama_menu": "Strawberry Smoothies",
             "harga": 12000,
             "img": "assets/images/menu/drink/Strawberry Smoothies.png",
-            "kategori": "Drink"
+            "kategori": "Drink",
+            "rating": 4.5
         },
         {
             "id": "DRI5",
             "nama_menu": "Es Teller Sultan",
             "harga": 12000,
             "img": "assets/images/menu/Drink/Es Teller Sultan.png",
-            "kategori": "Drink"
+            "kategori": "Drink",
+            "rating": 4.3
         },
         {
             "id": "DRI6",
             "nama_menu": "Choco Ice Blend",
             "harga": 12000,
             "img": "assets/images/menu/Drink/Choco Ice Blend.png",
-            "kategori": "Drink"
+            "kategori": "Drink",
+            "rating": 4.6
         },
         {
             "id": "DRI7",
             "nama_menu": "Es Teh Hijau",
             "harga": 12000,
             "img": "assets/images/menu/Drink/Es teh hijau.jpg",
-            "kategori": "Drink"
+            "kategori": "Drink",
+            "rating": 4.1
         },
         {
             "id": "DRI8",
             "nama_menu": "Lemon Tea",
             "harga": 12000,
             "img": "assets/images/menu/Drink/Lemon tea.jpg",
-            "kategori": "Drink"
+            "kategori": "Drink",
+            "rating": 4.5
         },
         {
             "id": "DRI9",
             "nama_menu": "Es Teh",
             "harga": 12000,
             "img": "assets/images/menu/Drink/Es teh.jpg",
-            "kategori": "Drink"
+            "kategori": "Drink",
+            "rating": 4.4
         },
         {
             "id": "SEB1",
             "nama_menu": "Seblak Bakso",
             "harga": 15000,
             "img": "assets/images/menu/Seblak/Seblak Bakso.jpg",
-            "kategori": "Seblak"
+            "kategori": "Seblak",
+            "rating": 4.7
         },
         {
             "id": "SEB2",
             "nama_menu": "Seblak Ceker",
             "harga": 15000,
             "img": "assets/images/menu/Seblak/Seblak Ceker.jpg",
-            "kategori": "Seblak"
+            "kategori": "Seblak",
+            "rating": 4.8
         },
         {
             "id": "SEB3",
             "nama_menu": "Seblak Chikuwa",
             "harga": 15000,
             "img": "assets/images/menu/Seblak/Seblak Chikuwa.jpg",
-            "kategori": "Seblak"
+            "kategori": "Seblak",
+            "rating": 4.3
         },
         {
             "id": "SEB4",
             "nama_menu": "Seblak Original",
             "harga": 15000,
             "img": "assets/images/menu/Seblak/Seblak Original.jpg",
-            "kategori": "Seblak"
+            "kategori": "Seblak",
+            "rating": 4.5
         },
         {
             "id": "SEB5",
             "nama_menu": "Seblak Seafood",
             "harga": 15000,
             "img": "assets/images/menu/Seblak/Seblak Seafood.jpg",
-            "kategori": "Seblak"
+            "kategori": "Seblak",
+            "rating": 4.9
         },
         {
             "id": "SEB6",
             "nama_menu": "Seblak Sosis",
             "harga": 15000,
             "img": "assets/images/menu/Seblak/Seblak Sosis.jpg",
-            "kategori": "Seblak"
+            "kategori": "Seblak",
+            "rating": 4.6
         },
         {
             "id": "DIM1",
             "nama_menu": "Dimsum Ayam",
             "harga": 15000,
             "img": "assets/images/menu/Dimsum/Dimsum ayam.jpg",
-            "kategori": "Dimsum"
+            "kategori": "Dimsum",
+            "rating": 4.2
         },
         {
             "id": "DIM2",
             "nama_menu": "Dimsum Ekado",
             "harga": 15000,
             "img": "assets/images/menu/Dimsum/Dimsum ekado.jpg",
-            "kategori": "Dimsum"
+            "kategori": "Dimsum",
+            "rating": 4.4
         },
         {
             "id": "DIM3",
             "nama_menu": "Dimsum Udang",
             "harga": 15000,
             "img": "assets/images/menu/Dimsum/Dimsum udang.jpg",
-            "kategori": "Dimsum"
+            "kategori": "Dimsum",
+            "rating": 4.8
         },
         {
             "id": "DIM4",
             "nama_menu": "Hakau",
             "harga": 15000,
             "img": "assets/images/menu/Dimsum/Hakau.jpg",
-            "kategori": "Dimsum"
+            "kategori": "Dimsum",
+            "rating": 4.6
         },
         {
             "id": "DIM5",
             "nama_menu": "Lumpia Kulit Tahu",
             "harga": 15000,
             "img": "assets/images/menu/Dimsum/Lumpia kulit tahu.jpg",
-            "kategori": "Dimsum"
+            "kategori": "Dimsum",
+            "rating": 4.3
         },
         {
             "id": "DIM6",
             "nama_menu": "Udang Keju",
             "harga": 15000,
             "img": "assets/images/menu/Dimsum/Udang keju.jpg",
-            "kategori": "Dimsum"
+            "kategori": "Dimsum",
+            "rating": 4.5
         },
         {
             "id": "DIM7",
             "nama_menu": "Wonton Pangsit Chili Oil",
             "harga": 15000,
             "img": "assets/images/menu/Dimsum/Wonton Pangsit Chili Oil.webp",
-            "kategori": "Dimsum"
+            "kategori": "Dimsum",
+            "rating": 4.7
         },
         {
             "id": "SUS1",
             "nama_menu": "Shusi Goreng",
             "harga": 15000,
             "img": "assets/images/menu/Sushi/Sushi Goreng.jpg",
-            "kategori": "Shusi"
+            "kategori": "Shusi",
+            "rating": 4.6
         },
         {
             "id": "SUS2",
             "nama_menu": "Shusi Mentai",
             "harga": 15000,
             "img": "assets/images/menu/Sushi/Sushi Mentai.jpg",
-            "kategori": "Shusi"
+            "kategori": "Shusi",
+            "rating": 4.9
         },
         {
             "id": "SUS3",
             "nama_menu": "Shusi Original",
             "harga": 15000,
             "img": "assets/images/menu/Sushi/Sushi Original.jpg",
-            "kategori": "Shusi"
+            "kategori": "Shusi",
+            "rating": 4.2
         },
         {
             "id": "MKN1",
             "nama_menu": "Ayam Geprek",
             "harga": 15000,
             "img": "assets/images/menu/Makanan/Ayam geprek.jpg",
-            "kategori": "Makanan"
+            "kategori": "Makanan",
+            "rating": 4.8
         },
         {
             "id": "MKN2",
             "nama_menu": "Ayam lava saos keju",
             "harga": 15000,
             "img": "assets/images/menu/Makanan/Ayam lava saos keju.jpg",
-            "kategori": "Makanan"
+            "kategori": "Makanan",
+            "rating": 4.5
         },
         {
             "id": "MKN3",
             "nama_menu": "Dori Crispy",
             "harga": 15000,
             "img": "assets/images/menu/Makanan/Dori Crispy.jpg",
-            "kategori": "Makanan"
+            "kategori": "Makanan",
+            "rating": 4.3
         },
         {
             "id": "MKN4",
             "nama_menu": "Mie Jebew",
             "harga": 15000,
             "img": "assets/images/menu/Makanan/Mie jebew.jpg",
-            "kategori": "Makanan"
+            "kategori": "Makanan",
+            "rating": 4.1
         },
         {
             "id": "MKN5",
             "nama_menu": "Mie Tiaw",
             "harga": 15000,
             "img": "assets/images/menu/Makanan/Mie tiaw.jpg",
-            "kategori": "Makanan"
+            "kategori": "Makanan",
+            "rating": 4.7
         },
         {
             "id": "MKN6",
             "nama_menu": "Nasi Goreng Ati Ampela",
             "harga": 15000,
             "img": "assets/images/menu/Makanan/Nasgor  ati ampela.jpg",
-            "kategori": "Makanan"
+            "kategori": "Makanan",
+            "rating": 4.4
         },
         {
             "id": "MKN7",
             "nama_menu": "Nasi Goreng Seafood",
             "harga": 15000,
             "img": "assets/images/menu/Makanan/Nasgor seafood.jpg",
-            "kategori": "Makanan"
+            "kategori": "Makanan",
+            "rating": 4.6
         },
         {
             "id": "MKN8",
             "nama_menu": "Nasi Goreng Telur",
             "harga": 15000,
             "img": "assets/images/menu/Makanan/Nasgor telur.jpg",
-            "kategori": "Makanan"
+            "kategori": "Makanan",
+            "rating": 4.5
         },
         {
             "id": "MKN9",
             "nama_menu": "Nasi Goreng",
             "harga": 15000,
             "img": "assets/images/menu/Makanan/Nasi goreng.jpg",
-            "kategori": "Makanan"
+            "kategori": "Makanan",
+            "rating": 4.2
         }
     ]
 }
