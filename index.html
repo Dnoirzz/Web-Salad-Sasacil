@@ -111,6 +111,7 @@
     }
     .intro-content h1 .fresh,
     .intro-content h1 .salad-here {
+      font-family: 'Marko One', serif;  
       color: #E91E63;
     }
     .intro-content p {
@@ -212,12 +213,14 @@
 
     .menu-section h1 {
       padding-left: 60px;
+      font-family: 'Marko One', serif;  
       font-size: 32px;
       margin: 0 0;
       color: black;
     }
 
     .menu-section h1 span {
+      font-family: 'Marko One', serif;    
       display: block;
       font-size: 32px;
       color: #e91e63;
@@ -306,19 +309,14 @@
     /* Recomend Section */
     .recomend {
       background: #ffe9f1;
-      padding: 100px;
+      padding: 86px;
       max-width: 2000px;
       margin-left: auto;
       margin-right: auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      align-items: center;
-      justify-content: space-between;
     }
     .recomend-content {
-    flex: 1 1 400px;
-    transform: translateX(-10px);
+      max-width: 2000px;
+      margin: 0 auto;
     }
     .recomend-content h1 {
       font-weight: 500;
@@ -331,23 +329,116 @@
     }
     .recomend-content h1 .best,
     .recomend-content h1 .you {
+      font-family: 'Marko One', serif;  
       color: #E91E63;
     }
     .recomend-content p {
+      position: relative;
+      left: 2px;  
       font-size: 1rem;
-      line-height: 1;
+      line-height: 1.5;
       max-width: 600px;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       color: black;
     }
-    .recomend-content .arrow-buttons {
+
+    .recomend-cards-container {
+      position: relative;  
+      left: 80px;
       display: flex;
+      max-width: 1200px;
+      gap: 60px;
+      overflow-x: auto;
+      padding: 20px 0;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .recomend-card {
+      width: 250px;
+      height: 350px;
+      border: 2px solid #e83e6c;
+      border-radius: 20px;
+      overflow: hidden;
+      background: transparent;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+
+    .recomend-card:hover {
+      background: #E4A7AF;  
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .card-image {
+      width: 100%;
+      height: 55%;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-body {
+      padding: 12px;
+      text-align: left;
+    }
+
+    .rating {
+      font-size: 10px;
+      background: transparent;
+      border: 2px solid #E91E63;
+      color: black;
+      padding: 2px 6px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 18px;
+      margin: 0;
+      padding-bottom: 1px;
+    }
+
+    .card-price {
+      font-size: 16px;
+      color: #888;
+      margin: 0;
+      padding-bottom: 2px;
+    }
+
+    .card-button {
+      background: #e83e6c;
+      color: white;
+      border: none;
+      padding: 10px 12px;
+      font-size: 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      float: right;
+      transition: background-color 0.3s ease;
+    }
+
+    .card-button:hover {
+      background: #d72d5b;
+    }
+
+    .recomend-arrows { 
+      position: relative;
+      right: 80px;  
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 10px;
       gap: 10px;
     }
 
     .circle-btnR {
-      position: relative;
-      left: 1250px;
       width: 32px;
       height: 32px;
       border-radius: 50%;
@@ -367,80 +458,17 @@
 
     .circle-btnR.outline:hover {
       background: #e91e63;
-      border: none;
       color: #fff;
     }
-    .recomend-card {
-      width: 230px;
-      height: 340px;
-      border: 2px solid #e83e6c;
-      border-radius: 20px;
-      overflow: hidden;
-      background: transparent;
-      flex-shrink: 0;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      transition: all 0.3s ease;
-    }
 
-    .card-image {
-      width: 100%;
-      height: 55%;
+    /* Hide scrollbar but keep functionality */
+    .recomend-cards-container::-webkit-scrollbar {
+      display: none;
     }
-
-    .card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+    .recomend-cards-container {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
-
-    .card-body {
-      padding: 12px;
-      text-align: flex-start;
-    }
-
-    .rating {
-      position: relative;
-      font-size: 10px;
-      background: transparent;
-      border: 2px solid #E91E63;
-      color: black;
-      padding: 2px 6px;
-      border-radius: 20px;
-      display: inline-block;
-      margin-bottom: 5px;
-    }
-
-    .card-title {
-      position: relative;
-      font-weight: 600;
-      font-size: 18px;
-      margin: 4px 0 0 0;
-    }
-
-    .card-price {
-      position: relative;
-      font-size: 16px;
-      color: #888;
-      margin: 1px 0 10px 0;
-    }
-
-    .card-button {
-      position: relative;
-      left: 110px;
-      background: #e83e6c;
-      color: white;
-      border: none;
-      padding: 10px 12px;
-      font-size: 12px;
-      border-radius: 20px;
-      cursor: pointer;
-    }
-
-    .card-button:hover {
-      background: #d72d5b;
-    }
-
   </style>
 </head>
 <body>
@@ -481,9 +509,9 @@
 
     <div class="slider-container">
       <div class="slider">
-        <img src="assets/images/menu/Salad Buah 500ml Taro.webp" class="slide active" alt="Salad 1">
-        <img src="assets/images/menu/Salad Buah 500ml Original.webp" class="slide" alt="Salad 2">
-        <img src="assets/images/menu/Salad Buah 500ml Cream Cheese.webp" class="slide" alt="Salad 3">
+        <img src="assets/images/menu/Salad/Salad Buah 500ml Taro.webp" class="slide active" alt="Salad 1">
+        <img src="assets/images/menu/Salad/Salad Buah 500ml Original.webp" class="slide" alt="Salad 2">
+        <img src="assets/images/menu/Salad/Salad Buah 500ml Cream Cheese.webp" class="slide" alt="Salad 3">
       </div>
       <div class="dots">
         <span class="dot active"></span>
@@ -503,82 +531,113 @@
     </div>
     <div class="menu-cards">
     <div class="menu-card active">
-      <div class="image-placeholder"><img src="assets/images/menu/Salad Buah 300ml Cream Cheese.webp" alt="Salad"></div>
+      <div class="image-placeholder"><img src="assets/images/menu/Salad/salad Buah 300ml Cream Cheese.webp" alt="Salad"></div>
       <p class="menu-title active">Salad</p>
       <p class="menu-sub">12 Items</p>
     </div>
     <div class="menu-card">
-      <div class="image-placeholder"><img src="assets/images/menu/Avocado Smoothies.png" alt="Drink"></div>
+      <div class="image-placeholder"><img src="assets/images/menu/drink/Avocado Smoothies.png" alt="Drink"></div>
       <p class="menu-title">Drink</p>
       <p class="menu-sub">12 Items</p>
     </div>
     <div class="menu-card">
-      <div class="image-placeholder"><img src="assets/images/menu/Seblak Ceker.jpg" alt="Seblak"></div>
+      <div class="image-placeholder"><img src="assets/images/menu/Seblak/Seblak Ceker.jpg" alt="Seblak"></div>
       <p class="menu-title">Seblak</p>
       <p class="menu-sub">12 Items</p>
     </div>
     <div class="menu-card">
-      <div class="image-placeholder"><img src="assets/images/menu/Sushi Mentai.jpg" alt="Shusi"></div>
+      <div class="image-placeholder"><img src="assets/images/menu/Sushi/Sushi Mentai.jpg" alt="Shusi"></div>
       <p class="menu-title">Shusi</p>
       <p class="menu-sub">12 Items</p>
     </div>
     <div class="menu-card">
-      <div class="image-placeholder"><img src="assets/images/menu/Dimsum ayam.jpg" alt="Dimsum"></div>
+      <div class="image-placeholder"><img src="assets/images/menu/Dimsum/Dimsum ayam.jpg" alt="Dimsum"></div>
       <p class="menu-title">Dimsum</p>
       <p class="menu-sub">12 Items</p>
     </div>
   </div>
   </section>
   <!-- Recomend Section -->
-   <section class="recomend">
+  <section class="recomend">
     <div class="recomend-content">
-      <h1>Our <span class="best">Best Salad </span>for <span class="you">You</span></h1>
+      <h1>Our <span class="best">Best Menu </span>for <span class="you">You</span></h1>
       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam sunt ex natus quaerat optio, 
         at ratione magni! Quos quae corrupti quo, dolores facere perspiciatis! Error eaque neque doloribus cupiditate accusantium?</p>
-      <div class="arrow-buttons">
+            <div class="recomend-arrows">
         <button class="circle-btnR outline"><i class="fas fa-arrow-left"></i></button>
         <button class="circle-btnR outline"><i class="fas fa-arrow-right"></i></button>
       </div>
-      <!-- Card 1  -->
-      <div class="recomend-card">
-        <div class="card-image">
-          <img src="assets/images/menu/Salad Buah 300ml Cream Cheese.webp" alt="Salad">
+      <div class="recomend-cards-container">
+        <!-- Card 1 -->
+        <div class="recomend-card">
+          <div class="card-image">
+            <img src="assets/images/menu/Salad/Salad Buah 500ml Cream Cheese.webp" alt="Salad">
+          </div>
+          <div class="card-body">
+            <div class="rating"><i class="fas fa-star"></i> 4.5</div>
+            <p class="card-title">Salad Buah Cream Cheese</p>
+            <p class="card-price">Rp 15.000,00</p>
+            <button class="card-button">Order Now</button>
+          </div>
         </div>
-        <div class="card-body">
-          <div class="rating"><i class="fas fa-star"></i> 4.5</div>
-          <p class="card-title">Salad 1</p>
-          <p class="card-price">Rp 5000,00</p>
-          <button class="card-button">Order Now</button>
+        
+        <!-- Card 2 -->
+        <div class="recomend-card">
+          <div class="card-image">
+            <img src="assets/images/menu/Salad/Salad Buah 500ml Taro.webp" alt="Salad">
+          </div>
+          <div class="card-body">
+            <div class="rating"><i class="fas fa-star"></i> 4.8</div>
+            <p class="card-title">Salad Buah Taro</p>
+            <p class="card-price">Rp 20.000,00</p>
+            <button class="card-button">Order Now</button>
+          </div>
         </div>
-      </div>
-            <!-- Card 1  -->
-      <div class="recomend-card">
-        <div class="card-image">
-          <img src="assets/images/menu/Salad Buah 300ml Cream Cheese.webp" alt="Salad">
+        
+        <!-- Card 3 -->
+        <div class="recomend-card">
+          <div class="card-image">
+            <img src="assets/images/menu/Salad/Salad Buah 500ml Original.webp" alt="Salad">
+          </div>
+          <div class="card-body">
+            <div class="rating"><i class="fas fa-star"></i> 4.7</div>
+            <p class="card-title">Salad Buah Original</p>
+            <p class="card-price">Rp 18.000,00</p>
+            <button class="card-button">Order Now</button>
+          </div>
         </div>
-        <div class="card-body">
-          <div class="rating"><i class="fas fa-star"></i> 4.5</div>
-          <p class="card-title">Salad 1</p>
-          <p class="card-price">Rp 5000,00</p>
-          <button class="card-button">Order Now</button>
+        
+        <!-- Card 4 -->
+        <div class="recomend-card">
+          <div class="card-image">
+            <img src="assets/images/menu/drink/Avocado Smoothies.png" alt="Drink">
+          </div>
+          <div class="card-body">
+            <div class="rating"><i class="fas fa-star"></i> 4.6</div>
+            <p class="card-title">Avocado Smoothies</p>
+            <p class="card-price">Rp 12.000,00</p>
+            <button class="card-button">Order Now</button>
+          </div>
         </div>
-      </div>
-            <!-- Card 1  -->
-      <div class="recomend-card">
-        <div class="card-image">
-          <img src="assets/images/menu/Salad Buah 300ml Cream Cheese.webp" alt="Salad">
-        </div>
-        <div class="card-body">
-          <div class="rating"><i class="fas fa-star"></i> 4.5</div>
-          <p class="card-title">Salad 1</p>
-          <p class="card-price">Rp 5000,00</p>
-          <button class="card-button">Order Now</button>
+        
+        <!-- Card 5 -->
+        <div class="recomend-card">
+          <div class="card-image">
+            <img src="assets/images/menu/drink/Dragon Fruit Smoothies.png" alt="Drink">
+          </div>
+          <div class="card-body">
+            <div class="rating"><i class="fas fa-star"></i> 4.9</div>
+            <p class="card-title">Dragon Fruit Smoothies</p>
+            <p class="card-price">Rp 15.000,00</p>
+            <button class="card-button">Order Now</button>
+          </div>
         </div>
       </div>
     </div>
-      
-   </section>
+  </section>
+
   <script>
+    // Slider for intro section
     let currentIndex = 0;
     const slides = document.querySelectorAll(".slide");
     const dots = document.querySelectorAll(".dot");
@@ -596,6 +655,34 @@
     }
 
     setInterval(nextSlide, 3000);
+
+    // Scroll functionality for recommendation cards
+    const cardsContainer = document.querySelector('.recomend-cards-container');
+    const leftBtn = document.querySelector('.circle-btnR.outline:first-child');
+    const rightBtn = document.querySelector('.circle-btnR.outline:last-child');
+
+    leftBtn.addEventListener('click', () => {
+      cardsContainer.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+
+    rightBtn.addEventListener('click', () => {
+      cardsContainer.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+
+    // Scroll functionality for menu cards
+    const menuCardsContainer = document.querySelector('.menu-cards');
+    const menuLeftBtn = document.querySelector('.menu-section .circle-btn.outline:first-child');
+    const menuRightBtn = document.querySelector('.menu-section .circle-btn.outline:last-child');
+
+    if (menuLeftBtn && menuRightBtn) {
+      menuLeftBtn.addEventListener('click', () => {
+        menuCardsContainer.scrollBy({ left: -150, behavior: 'smooth' });
+      });
+
+      menuRightBtn.addEventListener('click', () => {
+        menuCardsContainer.scrollBy({ left: 150, behavior: 'smooth' });
+      });
+    }
   </script>
 </body>
 </html>
