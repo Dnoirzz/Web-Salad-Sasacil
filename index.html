@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,12 +13,14 @@
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
     }
+
     body {
       margin: 0;
       background: #FCDEE4;
       color: #3a1a2f;
       scroll-behavior: smooth;
     }
+
     header {
       position: fixed;
       top: 0;
@@ -31,6 +34,7 @@
       padding: 0 30px;
       height: 70px;
     }
+
     .logo h1 {
       font-family: 'Marko One', serif;
       font-size: 24px;
@@ -40,34 +44,41 @@
       margin: 0;
       gap: 10px;
     }
+
     .logo h1 span {
       color: #e83e6c;
     }
+
     .logo img {
       width: 50px;
       height: auto;
       display: block;
     }
+
     .nav-container {
       display: none;
       flex-grow: 1;
       justify-content: center;
     }
+
     .nav-link {
       font-weight: 600;
       color: black;
       text-decoration: none;
       transition: color 0.3s ease;
     }
+
     .nav-link:hover {
       color: #E91E63;
     }
+
     @media (min-width: 768px) {
       .nav-container {
         display: flex;
         gap: 4rem;
       }
     }
+
     .login-button {
       margin-left: auto;
       background-color: transparent;
@@ -79,6 +90,7 @@
       font-weight: 600;
       transition: all 0.3s ease;
     }
+
     .login-button:hover {
       background-color: #e83e6c;
       color: white;
@@ -97,10 +109,12 @@
       align-items: center;
       justify-content: space-between;
     }
+
     .intro-content {
       flex: 1 1 400px;
       transform: translateX(-10px);
     }
+
     .intro-content h1 {
       font-weight: 500;
       font-family: 'Marko One', serif;
@@ -110,11 +124,13 @@
       line-height: 1.1;
       color: black;
     }
+
     .intro-content h1 .fresh,
     .intro-content h1 .salad-here {
-      font-family: 'Marko One', serif;  
+      font-family: 'Marko One', serif;
       color: #E91E63;
     }
+
     .intro-content p {
       font-size: 1rem;
       line-height: 1;
@@ -122,16 +138,19 @@
       margin-bottom: 25px;
       color: black;
     }
+
     .button-group {
       display: flex;
       flex-direction: column;
       gap: 20px;
     }
+
     @media (min-width: 640px) {
       .button-group {
         flex-direction: row;
       }
     }
+
     .btn-primary {
       background-color: transparent;
       color: black;
@@ -143,20 +162,24 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
+
     .btn-primary:hover {
       background-color: #e83e6c;
       color: white;
     }
+
     .social.icon {
       display: flex;
       gap: 16px;
       margin-top: 25px;
     }
+
     .social.icon a img {
       width: 28px;
       height: 28px;
       transition: transform 0.3s ease, opacity 0.3s ease;
     }
+
     .social.icon a:hover img {
       transform: scale(1.15);
       opacity: 0.75;
@@ -167,24 +190,29 @@
       position: relative;
       transform: translateX(-50px);
     }
+
     .slider {
       position: relative;
       width: 100%;
       overflow: hidden;
     }
+
     .slide {
       width: 100%;
       display: none;
       border-radius: 1rem;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     }
+
     .slide.active {
       display: block;
     }
+
     .dots {
       text-align: center;
       margin-top: 10px;
     }
+
     .dot {
       height: 10px;
       width: 10px;
@@ -194,12 +222,12 @@
       display: inline-block;
       transition: background-color 0.3s ease, transform 0.3s ease;
     }
+
     .dot.active {
       background-color: #e83e6c;
       transform: scale(1.5);
     }
 
-    /* Menu Section */
     .menu-section {
       background-image: url('assets/images/background.png');
       background-size: cover;
@@ -215,14 +243,14 @@
     .menu-section h1 {
       padding-left: 3.75rem;
       display: block;
-      font-family: 'Marko One', serif;  
+      font-family: 'Marko One', serif;
       font-size: 2rem;
       margin: 0 0;
       color: black;
     }
 
     .menu-section h1 span {
-      font-family: 'Marko One', serif;    
+      font-family: 'Marko One', serif;
       display: block;
       font-size: 2rem;
       color: #e91e63;
@@ -256,9 +284,9 @@
     }
 
     .image-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .menu-title {
@@ -277,7 +305,6 @@
       margin: 4px 0 0 0;
     }
 
-    /* Recomend Section */
     .recomend {
       background: #ffe9f1;
       padding: 86px;
@@ -285,10 +312,12 @@
       margin-left: auto;
       margin-right: auto;
     }
+
     .recomend-content {
       max-width: 2000px;
       margin: 0 auto;
     }
+
     .recomend-content h1 {
       font-weight: 500;
       font-family: 'Marko One', serif;
@@ -298,14 +327,16 @@
       line-height: 1.1;
       color: black;
     }
+
     .recomend-content h1 .best,
     .recomend-content h1 .you {
-      font-family: 'Marko One', serif;  
+      font-family: 'Marko One', serif;
       color: #E91E63;
     }
+
     .recomend-content p {
       position: relative;
-      left: 2px;  
+      left: 2px;
       font-size: 1rem;
       line-height: 1.5;
       max-width: 600px;
@@ -314,8 +345,7 @@
     }
 
     .recomend-cards-container {
-      position: relative;  
-      left: 80px;
+      position: relative;
       display: flex;
       max-width: 1200px;
       gap: 60px;
@@ -327,19 +357,21 @@
 
     .recomend-card {
       width: 250px;
-      height: 350px;
+      height: 400px;
       border: 2px solid #e83e6c;
       border-radius: 20px;
       overflow: hidden;
       background: transparent;
+      display: flex;
+      flex-direction: column;
       flex-shrink: 0;
       transition: all 0.3s ease;
     }
 
     .recomend-card:hover {
-      background: #E4A7AF;  
+      background: #E4A7AF;
       transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
 
     .card-image {
@@ -357,6 +389,9 @@
     .card-body {
       padding: 12px;
       text-align: left;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
     }
 
     .rating {
@@ -368,11 +403,12 @@
       border-radius: 20px;
       display: inline-block;
       margin-bottom: 5px;
+      align-self: flex-start;
     }
 
     .card-title {
       font-weight: 600;
-      font-size: 18px;
+      font-size: 16px !important;
       margin: 0;
       padding-bottom: 1px;
     }
@@ -391,8 +427,8 @@
       padding: 10px 12px;
       font-size: 12px;
       border-radius: 20px;
-      cursor: pointer;
-      float: right;
+      margin-top: auto;
+      align-self: flex-end;
       transition: background-color 0.3s ease;
     }
 
@@ -400,9 +436,9 @@
       background: #d72d5b;
     }
 
-    .recomend-arrows { 
+    .recomend-arrows {
       position: relative;
-      right: 80px;  
+      right: 80px;
       display: flex;
       justify-content: flex-end;
       margin-top: 10px;
@@ -432,16 +468,117 @@
       color: #fff;
     }
 
-    /* Hide scrollbar but keep functionality */
     .recomend-cards-container::-webkit-scrollbar {
       display: none;
     }
+
     .recomend-cards-container {
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 20px;
+        align-items: flex-start;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        display: flex;
+        margin-top: 10px;
+      }
+
+      .login-button {
+        margin: 10px 0 0 0;
+        width: 100%;
+        text-align: center;
+      }
+
+      .intro {
+        padding: 60px 20px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .intro-content {
+        transform: none;
+        flex: 1 1 auto;
+      }
+
+      .slider-container {
+        transform: none;
+        margin-top: 20px;
+        max-width: 100%;
+      }
+
+      .menu-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        gap: 20px;
+        text-align: center;
+      }
+
+      .menu-section h1 {
+        padding-left: 0;
+      }
+
+      .menu-cards {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .menu-card {
+        width: 40%;
+        min-width: 120px;
+      }
+
+      .recomend {
+        padding: 40px 20px;
+      }
+
+      .recomend-content h1 {
+        font-size: 2rem;
+        text-align: center;
+      }
+
+      .recomend-content p {
+        text-align: center;
+        left: 0;
+      }
+
+      .recomend-arrows {
+        justify-content: center;
+        right: 0;
+        margin-top: 20px;
+      }
+
+      .recomend-cards-container {
+        gap: 20px;
+        overflow-x: scroll;
+        padding: 20px 10px;
+      }
+
+      .recomend-card {
+        width: 200px;
+        height: auto;
+        flex-shrink: 0;
+      }
+
+      .card-body {
+        height: auto;
+      }
+    }
   </style>
 </head>
+
 <body>
   <header>
     <div class="logo">
@@ -458,15 +595,18 @@
   <!-- Intro Section -->
   <section class="intro">
     <div class="intro-content">
-      <h1>Find <span class="fresh">fresh</span> and <br />Delicious fruits <span class="salad-here">salad here!</span></h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate qui porro minus, 
-        velit pariatur fuga suscipit possimus reiciendis distinctio, vero iure rerum voluptatum dolorem accusantium voluptas dolorum, nobis illum sed!</p>
+      <h1>Find <span class="fresh">fresh</span> and <br />Delicious fruits <span class="salad-here">salad here!</span>
+      </h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate qui porro minus,
+        velit pariatur fuga suscipit possimus reiciendis distinctio, vero iure rerum voluptatum dolorem accusantium
+        voluptas dolorum, nobis illum sed!</p>
       <div class="button-group">
         <button class="btn-primary">Shop now</button>
         <button class="btn-primary">Contact</button>
       </div>
       <div class="social icon">
-        <a href="https://api.whatsapp.com/send/?phone=62895329099339&text&type=phone_number&app_absent=0" target="_blank">
+        <a href="https://api.whatsapp.com/send/?phone=62895329099339&text&type=phone_number&app_absent=0"
+          target="_blank">
           <img src="assets/icon/whatsapp black.png" alt="Whatsapp">
         </a>
         <a href="https://www.instagram.com/saladsasacil/" target="_blank">
@@ -497,45 +637,47 @@
       <h1>Menu <br><span class="category">Our Category</span></h1>
     </div>
     <div class="menu-cards">
-    <div class="menu-card active">
-      <div class="image-placeholder"><img src="assets/images/menu/Salad/salad Buah 300ml Cream Cheese.webp" alt="Salad"></div>
-      <p class="menu-title active">Salad</p>
-      <p class="menu-sub">12 Items</p>
+      <div class="menu-card active">
+        <div class="image-placeholder"><img src="assets/images/menu/Salad/salad Buah 300ml Cream Cheese.webp"
+            alt="Salad"></div>
+        <p class="menu-title active">Salad</p>
+        <p class="menu-sub">12 Items</p>
+      </div>
+      <div class="menu-card">
+        <div class="image-placeholder"><img src="assets/images/menu/drink/Avocado Smoothies.png" alt="Drink"></div>
+        <p class="menu-title">Drink</p>
+        <p class="menu-sub">12 Items</p>
+      </div>
+      <div class="menu-card">
+        <div class="image-placeholder"><img src="assets/images/menu/Seblak/Seblak Ceker.jpg" alt="Seblak"></div>
+        <p class="menu-title">Seblak</p>
+        <p class="menu-sub">12 Items</p>
+      </div>
+      <div class="menu-card">
+        <div class="image-placeholder"><img src="assets/images/menu/Sushi/Sushi Mentai.jpg" alt="Shusi"></div>
+        <p class="menu-title">Shusi</p>
+        <p class="menu-sub">12 Items</p>
+      </div>
+      <div class="menu-card">
+        <div class="image-placeholder"><img src="assets/images/menu/Dimsum/Dimsum ayam.jpg" alt="Dimsum"></div>
+        <p class="menu-title">Dimsum</p>
+        <p class="menu-sub">12 Items</p>
+      </div>
+      <div class="menu-card">
+        <div class="image-placeholder"><img src="assets/images/menu\Makanan/Nasi goreng.jpg" alt="Makanan"></div>
+        <p class="menu-title">Makanan</p>
+        <p class="menu-sub">12 Items</p>
+      </div>
     </div>
-    <div class="menu-card">
-      <div class="image-placeholder"><img src="assets/images/menu/drink/Avocado Smoothies.png" alt="Drink"></div>
-      <p class="menu-title">Drink</p>
-      <p class="menu-sub">12 Items</p>
-    </div>
-    <div class="menu-card">
-      <div class="image-placeholder"><img src="assets/images/menu/Seblak/Seblak Ceker.jpg" alt="Seblak"></div>
-      <p class="menu-title">Seblak</p>
-      <p class="menu-sub">12 Items</p>
-    </div>
-    <div class="menu-card">
-      <div class="image-placeholder"><img src="assets/images/menu/Sushi/Sushi Mentai.jpg" alt="Shusi"></div>
-      <p class="menu-title">Shusi</p>
-      <p class="menu-sub">12 Items</p>
-    </div>
-    <div class="menu-card">
-      <div class="image-placeholder"><img src="assets/images/menu/Dimsum/Dimsum ayam.jpg" alt="Dimsum"></div>
-      <p class="menu-title">Dimsum</p>
-      <p class="menu-sub">12 Items</p>
-    </div>
-        <div class="menu-card">
-      <div class="image-placeholder"><img src="assets/images/menu\Makanan/Nasi goreng.jpg" alt="Makanan"></div>
-      <p class="menu-title">Makanan</p>
-      <p class="menu-sub">12 Items</p>
-    </div>
-  </div>
   </section>
   <!-- Recomend Section -->
   <section class="recomend">
     <div class="recomend-content">
       <h1>Our <span class="best">Best Menu </span>for <span class="you">You</span></h1>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam sunt ex natus quaerat optio, 
-        at ratione magni! Quos quae corrupti quo, dolores facere perspiciatis! Error eaque neque doloribus cupiditate accusantium?</p>
-            <div class="recomend-arrows">
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam sunt ex natus quaerat optio,
+        at ratione magni! Quos quae corrupti quo, dolores facere perspiciatis! Error eaque neque doloribus cupiditate
+        accusantium?</p>
+      <div class="recomend-arrows">
         <button class="circle-btnR outline"><i class="fas fa-arrow-left"></i></button>
         <button class="circle-btnR outline"><i class="fas fa-arrow-right"></i></button>
       </div>
@@ -544,4 +686,5 @@
   </section>
   <script src="calldata.js"></script>
 </body>
+
 </html>
