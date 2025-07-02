@@ -1,7 +1,7 @@
 {
     "admin": [
         {
-            "id": 1,
+            "id": "adm1",
             "username": "admin",
             "password": "admin",
             "email": "ryan011@example.com",
@@ -12,7 +12,7 @@
     ],
     "users": [
         {
-            "id": 1,
+            "id": "usr1",
             "username": "Ryan10",
             "password": "123",
             "email": "ryan01@example.com",

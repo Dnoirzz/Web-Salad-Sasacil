@@ -1,3 +1,22 @@
+// Burger menu functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const burgerMenu = document.querySelector('.burger-menu');
+      const navContainer = document.querySelector('.nav-container');
+
+      burgerMenu.addEventListener('click', () => {
+        navContainer.classList.toggle('active');
+        burgerMenu.classList.toggle('active');
+      });
+
+      // Close menu when clicking on a link
+      document.querySelectorAll('.nav-link, .mobile-only').forEach(link => {
+        link.addEventListener('click', () => {
+          navContainer.classList.remove('active');
+          burgerMenu.classList.remove('active');
+        });
+      });
+    });
+
 // Slider for intro section
     let currentIndex = 0;
     const slides = document.querySelectorAll(".slide");
