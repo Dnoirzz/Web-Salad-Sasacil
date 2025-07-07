@@ -29,7 +29,8 @@
             "harga": 12000,
             "img": "assets/images/menu/Salad/Salad Buah 500ml Cream Cheese.webp",
             "kategori": "Salad",
-            "rating": 4.5
+            "rating": 4.5,
+            "stock": 20
         },
         {
             "id": "SAL2",
@@ -107,7 +108,7 @@
             "id": "DRI3",
             "nama_menu": "Mango Smoothies",
             "harga": 12000,
-            "img": "assets/images/menu/drink/Mango Smoothies.png",
+            "img": "assets/images/menu/Drink/Mango smoothies.jpg",
             "kategori": "Drink",
             "rating": 4.6
         },
