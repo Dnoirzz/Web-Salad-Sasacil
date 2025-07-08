@@ -116,7 +116,7 @@
             "id": "DRI4",
             "nama_menu": "Strawberry Smoothies",
             "harga": 12000,
-            "img": "assets/images/menu/drink/Strawberry Smoothies.png",
+            "img": "assets/images/menu/Drink/Strawberry smoothies.jpg",
             "kategori": "Drink",
             "rating": 4.5
         },
@@ -264,28 +264,28 @@
             "kategori": "Dimsum",
             "rating": 4.7
         },
-        {
-            "id": "SUS1",
-            "nama_menu": "Shusi Goreng",
-            "harga": 15000,
-            "img": "assets/images/menu/Sushi/Sushi Goreng.jpg",
-            "kategori": "Shusi",
-            "rating": 4.6
-        },
+            {
+                "id": "SUS1",
+                "nama_menu": "Sushi Goreng",
+                "harga": 15000,
+                "img": "assets/images/menu/Sushi/Sushi Goreng.jpg",
+                "kategori": "Sushi",
+                "rating": 4.6
+            },
         {
             "id": "SUS2",
-            "nama_menu": "Shusi Mentai",
+            "nama_menu": "Sushi Mentai",
             "harga": 15000,
             "img": "assets/images/menu/Sushi/Sushi Mentai.jpg",
-            "kategori": "Shusi",
+            "kategori": "Sushi",
             "rating": 4.9
         },
         {
             "id": "SUS3",
-            "nama_menu": "Shusi Original",
+            "nama_menu": "Sushi Original",
             "harga": 15000,
             "img": "assets/images/menu/Sushi/Sushi Original.jpg",
-            "kategori": "Shusi",
+            "kategori": "Sushi",
             "rating": 4.2
         },
         {

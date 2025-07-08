@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salad Sasacil - Menu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marko+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: radial-gradient(circle at bottom left, #fcdde8 0%, transparent 50%),
+                radial-gradient(circle at top right, #fcdde8 0%, transparent 50%),
+                #ffffff;
+            padding-top: 70px;
+            color: #3a1a2f;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: radial-gradient(circle at bottom left, #fcdde8 0%, transparent 50%),
+                radial-gradient(circle at top right, #fcdde8 0%, transparent 50%),
+                #ffffff;
+            box-shadow: 0 2px 6px rgba(212, 202, 204, 0.23);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            height: 70px;
+        }
+
+        .logo h1 {
+            font-family: 'Marko One', serif;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo h1 span {
+            color: #e83e6c;
+        }
+
+        .logo img {
+            width: 50px;
+            height: auto;
+        }
+
+        /* Login Button */
+        .login-button.desktop-only {
+            display: block;
+            margin-left: auto;
+            margin-right: 20px;
+        }
+
+        .login-button.mobile-only {
+            display: none;
+        }
+
+        /* Navigation */
+        .nav-container {
+            display: flex;
+            flex-grow: 1;
+            justify-content: center;
+            gap: 4rem;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            color: black;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #E91E63;
+        }
+
+        .login-button {
+            background-color: transparent;
+            color: black;
+            padding: 5px 20px;
+            border: 2px solid #e83e6c;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .login-button:hover {
+            background-color: #e83e6c;
+            color: white;
+        }
+
+        /* Burger Menu */
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 24px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 10;
+        }
+
+        .burger-menu span {
+            width: 100%;
+            height: 3px;
+            background: #3a1a2f;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            position: relative;
+            transform-origin: 1px;
+        }
+
+        main {
+            padding: 30px 60px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .search-input-wrapper {
+            padding-top: 20px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .search-input-wrapper input {
+            background: transparent;
+            width: 100%;
+            padding: 10px 15px 10px 40px;
+            border: 2px solid #e83e6c;
+            border-radius: 10px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .search-input-wrapper .search-icon {
+            position: absolute;
+            top: 65%;
+            left: 12px;
+            transform: translateY(-50%);
+            color: #555;
+            font-size: 16px;
+            pointer-events: none;
+        }
+
+        .section-title2 {
+            padding-top: 20px;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        /* Menu Cards Styles */
+        .recommend-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 22px;
+            padding: 20px 0;
+            width: 100%;
+        }
+
+        .recommend-card {
+            width: 100%;
+            height: 400px;
+            border: 2px solid #e83e6c;
+            border-radius: 20px;
+            overflow: hidden;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .recommend-card:hover {
+            background: #f8d7df !important;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .recommend-card:hover .card-img img {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-rating {
+            display: inline-block;
+            font-size: 12px;
+            padding: 3px 8px;
+            border: 1px solid #E91E63;
+            border-radius: 20px;
+            margin-bottom: 8px;
+            align-self: flex-start;
+            color: #e83e6c;
+        }
+
+        .card-rating span {
+            color: black;
+            font-weight: 600;
+        }
+
+        .card-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .card-price {
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .card-btn {
+            margin-top: auto;
+            align-self: flex-end;
+            background: #e83e6c;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .card-btn:hover {
+            background: #d72d5b;
+        }
+
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px;
+            color: #888;
+            font-size: 1.2rem;
+        }
+
+        /* View All/Hide Items Text Link */
+        .view-all-container {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .view-all-link {
+            color: #e83e6c;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .view-all-link:hover {
+            color: #d72d5b;
+            text-decoration: underline;
+        }
+
+        .section-title3 {
+            padding-top: 20px;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .menu-cards {
+            display: flex;
+            gap: 60px;
+            overflow-x: auto;
+            padding: 20px 0;
+            scroll-behavior: smooth;
+            flex-grow: 1;
+            justify-content: center;
+        }
+
+        .menu-card {
+            background: transparent;
+            border: 2px solid #e83e6c;
+            min-width: 120px;
+            padding: 40px 10px;
+            border-radius: 100px;
+            text-align: center;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .menu-card.active {
+            background: #96C2AF;
+            transform: translateY(-5px);
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            background: #96C2AF;
+        }
+
+        .menu-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            overflow: hidden;
+        }
+
+        .menu-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .menu-name {
+            font-weight: 600;
+            margin: 0;
+            transition: color 0.3s ease;
+        }
+
+        .menu-count {
+            font-size: 12px;
+            color: #888;
+            margin-top: 4px;
+        }
+
+        /* Kategori Menu Styles */
+        .kategori-container {
+            display: none;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 22px;
+            padding: 20px 0;
+            width: 100%;
+        }
+
+        .kategori-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            grid-column: 1 / -1;
+        }
+
+        .kategori-title i {
+            color: #e83e6c;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .kategori-title i:hover {
+            transform: translateX(-5px);
+        }
+
+        .kategori-card {
+            width: 100%;
+            height: 400px;
+            border: 3px solid #09945A;
+            border-radius: 20px;
+            overflow: hidden;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Ukuran gambar dalam card */
+        .kategori-card .card-img {
+            height: 50%;
+        }
+
+        /* Ukuran tombol */
+        .kategori-card .card-btn {
+            padding: 6px 12px;
+            font-size: 13px;
+            background: #09945A;
+        }
+
+        .kategori-card:hover {
+            background: #96C2AF;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /*best seller*/
+        .section-title4 {
+            padding-top: 20px;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .best-seller-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 22px;
+            padding: 20px 0;
+            width: 100%;
+        }
+
+        .best-seller-card {
+            width: 100%;
+            height: 400px;
+            border: 2px solid #e83e6c;
+            border-radius: 20px;
+            overflow: hidden;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .best-seller-card:hover {
+            background: #f8d7df !important;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .best-seller-card:hover .card-img img {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-rating {
+            display: inline-block;
+            font-size: 12px;
+            padding: 3px 8px;
+            border: 1px solid #E91E63;
+            border-radius: 20px;
+            margin-bottom: 8px;
+            align-self: flex-start;
+            color: #e83e6c;
+        }
+
+        .card-rating span {
+            color: black;
+            font-weight: 600;
+        }
+
+        .card-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .card-price {
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .card-btn {
+            margin-top: auto;
+            align-self: flex-end;
+            background: #e83e6c;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .card-btn:hover {
+            background: #d72d5b;
+        }
+
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px;
+            color: #888;
+            font-size: 1.2rem;
+        }
+
+        /* View All/Hide Items Text Link */
+        .view-all-container {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .view-all-link {
+            color: #e83e6c;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .view-all-link:hover {
+            color: #d72d5b;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 20px;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            .burger-menu {
+                display: flex;
+                margin-left: auto;
+            }
+
+            .nav-container {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: #fae0e6;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                gap: 15px;
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+            }
+
+            .nav-container.active {
+                transform: translateY(0);
+            }
+
+            .login-button.desktop-only {
+                display: none;
+            }
+
+            .login-button.mobile-only {
+                display: block;
+                margin-top: 10px;
+            }
+
+            .recommend-cards,
+            .kategori-container {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-cards {
+                gap: 20px;
+                padding: 20px 10px;
+            }
+
+            .menu-card {
+                min-width: 100px;
+                padding: 30px 5px;
+            }
+
+            .menu-img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        /* Burger Animation */
+        .burger-menu.active span:first-child {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .burger-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger-menu.active span:last-child {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1><img src="assets/images/sasacil logo.png" alt="Salad Sasacil">Salad<span>Sasacil</span></h1>
+        </div>
+
+        <button class="burger-menu" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="nav-container">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="#menu" class="nav-link">Menu</a>
+            <a href="#recommend" class="nav-link">Popular</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <a href="login.html" class="login-button mobile-only">Login</a>
+        </div>
+        <a href="login.html" class="login-button desktop-only">Login</a>
+    </header>
+
+    <main>
+        <h2 class="section-title">Menu</h2>
+        <div class="search-input-wrapper">
+            <span class="search-icon"><i class="fas fa-search"></i></span>
+            <input type="text" placeholder="Search" id="searchInput" />
+        </div>
+        <h3 class="section-title2">Our Best Salad for You</h3>
+        <div class="view-all-container">
+            <a class="view-all-link" id="toggleViewBtn">View all</a>
+        </div>
+        <div class="recommend-cards" id="recommend-cards">
+            <!-- Salad cards will be inserted here by JavaScript -->
+        </div>
+
+        <h4 class="section-title3">Category</h4>
+        <div class="menu-cards">
+            <div class="menu-card active">
+                <div class="menu-img">
+                    <img src="assets/images/menu/Salad/salad Buah 300ml Cream Cheese.webp" alt="Salad">
+                </div>
+                <p class="menu-name">Salad</p>
+                <p class="menu-count">12 Items</p>
+            </div>
+            <div class="menu-card">
+                <div class="menu-img">
+                    <img src="assets/images/menu/drink/Avocado Smoothies.png" alt="Drink">
+                </div>
+                <p class="menu-name">Drink</p>
+                <p class="menu-count">12 Items</p>
+            </div>
+            <div class="menu-card">
+                <div class="menu-img">
+                    <img src="assets/images/menu/Seblak/Seblak Ceker.jpg" alt="Seblak">
+                </div>
+                <p class="menu-name">Seblak</p>
+                <p class="menu-count">12 Items</p>
+            </div>
+            <div class="menu-card">
+                <div class="menu-img">
+                    <img src="assets/images/menu/Sushi/Sushi Mentai.jpg" alt="Sushi">
+                </div>
+                <p class="menu-name">Sushi</p>
+                <p class="menu-count">12 Items</p>
+            </div>
+            <div class="menu-card">
+                <div class="menu-img">
+                    <img src="assets/images/menu/Dimsum/Dimsum ayam.jpg" alt="Dimsum">
+                </div>
+                <p class="menu-name">Dimsum</p>
+                <p class="menu-count">12 Items</p>
+            </div>
+            <div class="menu-card">
+                <div class="menu-img">
+                    <img src="assets/images/menu/Makanan/Nasi goreng.jpg" alt="Food">
+                </div>
+                <p class="menu-name">Makanan</p>
+                <p class="menu-count">12 Items</p>
+            </div>
+        </div>
+
+        <!-- Container for kategori items -->
+        <div id="kategoriContainer" class="kategori-container">
+            <!-- Menu items will be loaded here based on category selection -->
+        </div>
+
+        <h6 class="section-title4">Best Seler</h6>
+<div class="view-all-container">
+    <a class="view-all-link" id="toggleViewBestSellerBtn">View all</a>
+</div>
+        <div class="best-seller-cards" id="best-seller-cards">
+            <!-- Salad cards will be inserted here by JavaScript -->
+        </div>
+    </main>
+
+    <script>
+        // Burger Menu Toggle
+        const burgerMenu = document.querySelector('.burger-menu');
+        const navContainer = document.querySelector('.nav-container');
+
+        burgerMenu.addEventListener('click', () => {
+            burgerMenu.classList.toggle('active');
+            navContainer.classList.toggle('active');
+        });
+
+        // Close menu when clicking on links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                burgerMenu.classList.remove('active');
+                navContainer.classList.remove('active');
+            });
+        });
+
+        // Menu Data
+        let saladMenuData = [];
+        let filteredSaladData = [];
+        let showAll = false;
+        let showAllBestSeller = false;
+        let filteredBestsellData = [];
+        const initialDisplayCount = 5;
+
+        // Load menu data
+        async function loadSaladMenu() {
+            try {
+                const response = await fetch('data.json');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+
+                // Use data from JSON or fallback to sample data
+                saladMenuData = data.menu || getSampleMenuData();
+
+                // Initialize with Salad items
+                filteredSaladData = saladMenuData.filter(item =>
+                    item.kategori.toLowerCase() === "salad"
+                );
+
+                        // Initialize best seller items (rating >= 4.6)
+        filteredBestsellData = saladMenuData.filter(item =>
+            item.rating >= 4.7
+        );
+
+                renderSaladCards();
+                renderBestsellCards();
+                updateMenuCounts();
+                
+                // Automatically show Salad category items on page load
+                showCategoryItems("Salad");
+            } catch (error) {
+                console.error('Error loading menu data:', error);
+                // Use sample data if fetch fails
+                saladMenuData = getSampleMenuData();
+                filteredSaladData = saladMenuData.filter(item =>
+                    item.kategori.toLowerCase() === "salad"
+                );
+                renderSaladCards();
+                renderBestsellCards();
+                updateMenuCounts();
+                showCategoryItems("Salad");
+            }
+        }
+
+        // Update item counts for each category
+        function updateMenuCounts() {
+            document.querySelectorAll('.menu-card').forEach(card => {
+                const category = card.querySelector('.menu-name').textContent;
+                const count = saladMenuData.filter(item =>
+                    item.kategori.toLowerCase() === category.toLowerCase()
+                ).length;
+                card.querySelector('.menu-count').textContent = `${count} Items`;
+            });
+        }
+
+        // Render salad cards
+        function renderSaladCards() {
+            const container = document.getElementById('recommend-cards');
+            const toggleViewBtn = document.getElementById('toggleViewBtn');
+            container.innerHTML = '';
+
+            if (filteredSaladData.length === 0) {
+                container.innerHTML = '<div class="no-results">No items found matching your search</div>';
+                toggleViewBtn.style.display = 'none';
+                return;
+            }
+
+            const itemsToDisplay = showAll ? filteredSaladData : filteredSaladData.slice(0, initialDisplayCount);
+
+            itemsToDisplay.forEach((item) => {
+                const card = document.createElement('div');
+                card.className = 'recommend-card';
+                card.innerHTML = `
+                    <div class="card-img">
+                        <img src="${item.img}" alt="${item.nama_menu}" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-rating"><i class="fas fa-star"></i><span> ${item.rating}</span></span>
+                        <h3 class="card-title">${item.nama_menu}</h3>
+                        <p class="card-price">Rp ${item.harga.toLocaleString('id-ID')}</p>
+                        <button class="card-btn">Order Now</button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+
+            if (filteredSaladData.length <= initialDisplayCount) {
+                toggleViewBtn.style.display = 'none';
+            } else {
+                toggleViewBtn.style.display = 'inline-block';
+                toggleViewBtn.textContent = showAll ? 'Hide' : 'View all';
+            }
+        }
+
+        // Toggle view all/hide items
+        document.getElementById('toggleViewBtn').addEventListener('click', () => {
+            showAll = !showAll;
+            renderSaladCards();
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            filteredSaladData = saladMenuData.filter(item =>
+                item.nama_menu.toLowerCase().includes(searchTerm) ||
+                (item.deskripsi && item.deskripsi.toLowerCase().includes(searchTerm))
+            );
+            showAll = false;
+            renderSaladCards();
+        });
+
+        // Category Menu Functionality
+        const menuCards = document.querySelectorAll('.menu-card');
+        const kategoriContainer = document.getElementById('kategoriContainer');
+        const kategoriTitle = document.createElement('h3');
+        kategoriTitle.className = 'kategori-title';
+
+        menuCards.forEach(card => {
+            card.addEventListener('click', function() {
+                menuCards.forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+
+                const category = this.querySelector('.menu-name').textContent;
+                showCategoryItems(category);
+            });
+        });
+
+        // Show items for selected category
+        function showCategoryItems(category) {
+            kategoriContainer.style.display = 'grid';
+
+            // Update kategori title
+            kategoriContainer.innerHTML = '';
+            kategoriTitle.innerHTML = `
+                <i class="back-to-categories"></i> Kategori
+                ${category}
+            `;
+            kategoriContainer.appendChild(kategoriTitle);
+
+            // Filter items by category
+            const categoryItems = saladMenuData.filter(item =>
+                item.kategori.toLowerCase() === category.toLowerCase()
+            );
+
+            // Display category items
+            if (categoryItems.length === 0) {
+                kategoriContainer.innerHTML = `
+                    <div class="no-results" style="grid-column: 1 / -1;">
+                        No items found in ${category} category
+                    </div>
+                `;
+                return;
+            }
+
+            categoryItems.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'kategori-card';
+                card.innerHTML = `
+                    <div class="card-img">
+                        <img src="${item.img}" alt="${item.nama_menu}" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-rating"><i class="fas fa-star"></i><span> ${item.rating}</span></span>
+                        <h3 class="card-title">${item.nama_menu}</h3>
+                        <p class="card-price">Rp ${item.harga.toLocaleString('id-ID')}</p>
+                        <button class="card-btn">Order Now</button>
+                    </div>
+                `;
+                kategoriContainer.appendChild(card);
+            });
+
+            // Scroll to kategori section
+            kategoriContainer.scrollIntoView({ behavior: 'smooth' });
+
+            // Back button functionality
+            document.querySelector('.back-to-categories').addEventListener('click', backToCategories);
+        }
+
+        // Back to categories view
+        function backToCategories() {
+            kategoriContainer.style.display = 'none';
+            menuCards.forEach(c => c.classList.remove('active'));
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', () => {
+            loadSaladMenu();
+
+            // Order button functionality
+            document.addEventListener('click', (e) => {
+                if (e.target.classList.contains('card-btn')) {
+                    const card = e.target.closest('.recommend-card') || e.target.closest('.kategori-card') || e.target.closest('.best-seller-card'); 
+                    const title = card.querySelector('.card-title').textContent;
+                    alert(`Harap Login Terlebih Dahulu Sebelum Melakukan Pemesanan!`);
+                }
+            });
+        });
+
+        // Render Best Seller cards
+function renderBestsellCards() {
+    const container = document.getElementById('best-seller-cards');
+    const toggleViewBtn = document.getElementById('toggleViewBestSellerBtn');
+    container.innerHTML = '';
+
+    if (filteredBestsellData.length === 0) {
+        container.innerHTML = '<div class="no-results">No items found matching your search</div>';
+        toggleViewBtn.style.display = 'none';
+        return;
+    }
+
+    const itemsToDisplay = showAllBestSeller ? filteredBestsellData : filteredBestsellData.slice(0, initialDisplayCount);
+
+    itemsToDisplay.forEach((item) => {
+        const card = document.createElement('div');
+        card.className = 'best-seller-card';
+        card.innerHTML = `
+            <div class="card-img">
+                <img src="${item.img}" alt="${item.nama_menu}" loading="lazy">
+            </div>
+            <div class="card-body">
+                <span class="card-rating"><i class="fas fa-star"></i><span> ${item.rating}</span></span>
+                <h3 class="card-title">${item.nama_menu}</h3>
+                <p class="card-price">Rp ${item.harga.toLocaleString('id-ID')}</p>
+                <button class="card-btn">Order Now</button>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+
+    if (filteredBestsellData.length <= initialDisplayCount) {
+        toggleViewBtn.style.display = 'none';
+    } else {
+        toggleViewBtn.style.display = 'inline-block';
+        toggleViewBtn.textContent = showAllBestSeller ? 'Hide' : 'View all';
+    }
+}
+
+document.getElementById('toggleViewBestSellerBtn').addEventListener('click', () => {
+    showAllBestSeller = !showAllBestSeller;
+    renderBestsellCards();
+});
+    </script>
+</body>
+
+</html>
