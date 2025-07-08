@@ -66,6 +66,7 @@
     .login-button.mobile-only {
       display: none;
     }
+
     /* Navigation */
     .nav-container {
       display: flex;
@@ -230,8 +231,13 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
 
     .slider-dots {
@@ -351,7 +357,7 @@
       margin-bottom: 30px;
     }
 
-    .recommend-container h1{
+    .recommend-container h1 {
       font-weight: 500;
       font-family: 'Marko One', serif;
       font-size: 2.75rem;
@@ -361,7 +367,7 @@
       color: black;
     }
 
-     .recommend-container p{
+    .recommend-container p {
       position: relative;
       left: 2px;
       font-size: 1rem;
@@ -442,7 +448,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-  
+
     }
 
     .card-body {
@@ -462,7 +468,8 @@
       align-self: flex-start;
       color: #e83e6c;
     }
-    .card-rating span{
+
+    .card-rating span {
       color: black;
       font-weight: 600;
     }
@@ -514,6 +521,164 @@
       background: #e83e6c;
       transform: scale(1.2);
     }
+
+    /* Sercice Section */
+  .service {
+    background: #ffe9f1;
+    padding: 60px 0;
+  }
+
+  .service-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 30px;
+    gap: 40px;
+  }
+
+  .service-content {
+    flex: 1;
+    min-width: 400px;
+    max-width: 1000px;
+  }
+
+  .section-title-service {
+    position: relative;
+    padding-top: 10px;
+    padding-left: 50px;
+    font-size: 1.75rem;
+    color: #3a1a2f;
+    margin-bottom: 20px;
+  }
+
+  .section-title-service1 h2 {
+    position: relative;
+    padding-left: 50px !important;
+    font-weight: 500;
+    font-family: 'Marko One', serif;
+    font-size: 2.75rem;
+    color: #e83e6c;
+    background-color: transparent;
+    padding: 10px 0;
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+
+  .section-title-service1 .black {
+    color: black;
+    font-weight: 700;
+  }
+
+  .section-title-service1 p {
+    padding-left: 50px;
+    position: relative;
+    left: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 650px;
+    margin-bottom: 25px;
+    color: black;
+  }
+
+  .link-service {
+    left: 50px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    margin-top: 10px;
+    background-color: transparent;
+    color: black;
+    font-weight: 600;
+    padding: 10px 22px;
+    border: 2px solid #E91E63;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .link-service:hover {
+    background-color: #e83e6c;
+    color: white;
+  }
+
+  /* Service Slider Styles */
+  .service-slider-container {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    margin: 0;
+    right: 50px;
+    position: relative;
+  }
+
+  .service-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .service-slide {
+    width: 100%;
+    display: none;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .service-slide.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .service-slide-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .service-icon {
+    font-size: 40px;
+    color: #e83e6c;
+  }
+
+  .service-title {
+    font-family: 'Marko One', serif;
+    font-size: 1.5rem;
+    color: #3a1a2f;
+  }
+
+  .service-desc {
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .service-slider-dots {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .service-slider-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 6px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .service-slider-dot.active {
+    background-color: #e83e6c;
+    transform: scale(1.2);
+  }
 
     /* Contact Section */
     .contact {
@@ -800,7 +965,38 @@
       .contact-list {
         align-items: center;
       }
+          .service-container {
+      flex-direction: column;
+      padding: 0 20px;
+      gap: 30px;
     }
+    
+    .service-content {
+      max-width: 100%;
+    }
+    
+    .service-slider-container {
+      max-width: 100%;
+      margin-top: 30px;
+    }
+    
+    .service-slide {
+      padding: 20px;
+    }
+    
+    .section-title-service1 h2 {
+      font-size: 2rem;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 
     /* Burger Animation */
     .burger-menu.active span:first-child {
@@ -821,6 +1017,7 @@
         transform: translateX(100px);
         opacity: 0;
       }
+
       to {
         transform: translateX(0);
         opacity: 1;
@@ -832,6 +1029,7 @@
         transform: translateX(-100px);
         opacity: 0;
       }
+
       to {
         transform: translateX(0);
         opacity: 1;
@@ -859,13 +1057,15 @@
       <a href="#contact" class="nav-link">Contact</a>
       <a href="login.html" class="login-button mobile-only">Login</a>
     </div>
-      <a href="login.html" class="login-button desktop-only">Login</a>
+    <a href="login.html" class="login-button desktop-only">Login</a>
   </header>
 
   <section class="intro">
     <div class="intro-content">
-      <h1>Find <span class="highlight">fresh</span> and <br>delicious fruits <span class="highlight">salad here!</span></h1>
-      <p>Discover our healthy and tasty salad creations made with the freshest ingredients. Perfect for any time of day!</p>
+      <h1>Find <span class="highlight">fresh</span> and <br>delicious fruits <span class="highlight">salad here!</span>
+      </h1>
+      <p>Discover our healthy and tasty salad creations made with the freshest ingredients. Perfect for any time of day!
+      </p>
       <div class="button-group">
         <button class="btn-primary">Shop now</button>
         <button class="btn-primary">Our Menu</button>
@@ -893,7 +1093,7 @@
 
   <section class="menu-section" id="menu">
     <div class="menu-container">
-      
+
     </div>
     <div>
       <h1 class="section-title">Menu <br><span class="highlight">Categories</span></h1>
@@ -946,25 +1146,80 @@
 
   <section class="recommend" id="recommend">
     <div class="recommend-container">
-        <h1 class="section-title">Our <span class="highlight">Best Menu</span> for <span class="highlight">You</span></h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium aperiam fuga harum impedit sunt, 
-            minima magni praesentium omnis vel a cumque molestiae accusamus illo facere deserunt iusto. Tenetur, maxime atque!</p>
-        <div class="section-nav">
-          <button class="nav-btn prev-btn"><i class="fas fa-arrow-left"></i></button>
-          <button class="nav-btn next-btn"><i class="fas fa-arrow-right"></i></button>
-        </div>
+      <h1 class="section-title">Our <span class="highlight">Best Menu</span> for <span class="highlight">You</span></h1>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium aperiam fuga harum impedit sunt,
+        minima magni praesentium omnis vel a cumque molestiae accusamus illo facere deserunt iusto. Tenetur, maxime
+        atque!</p>
+      <div class="section-nav">
+        <button class="nav-btn prev-btn"><i class="fas fa-arrow-left"></i></button>
+        <button class="nav-btn next-btn"><i class="fas fa-arrow-right"></i></button>
       </div>
-      
-      <div class="recommend-cards" id="recommend-cards"></div>
-      
-      <div class="page-dots" id="page-dots"></div>
+    </div>
+
+    <div class="recommend-cards" id="recommend-cards"></div>
+
+    <div class="page-dots" id="page-dots"></div>
     </div>
   </section>
+
+<section class="service">
+  <div class="service-container">
+    <!-- Bagian Kiri: Konten Teks -->
+    <div class="service-content">
+      <h1 class="section-title-service">Service</h1>
+      <div class="section-title-service1">
+        <h2>Why <span class="black">we are</span> best <span class="black">for</span> you<span class="black">?</span></h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium aperiam fuga harum impedit sunt,
+          minima magni praesentium omnis vel a cumque molestiae accusamus illo facere deserunt iusto. Tenetur, maxime
+          atque!</p>
+        <button class="link-service">Learn More</button>
+      </div>
+    </div>
+    
+    <!-- Bagian Kanan: Slider -->
+    <div class="service-slider-container">
+      <div class="service-slider">
+        <div class="service-slide active">
+          <div class="service-slide-content">
+            <div class="service-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3 class="service-title">Fresh Ingredients</h3>
+            <p class="service-desc">We use only the freshest fruits and vegetables, sourced daily from local farmers to ensure maximum quality and nutrition in every bite.</p>
+          </div>
+        </div>
+        <div class="service-slide">
+          <div class="service-slide-content">
+            <div class="service-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h3 class="service-title">Fast Delivery</h3>
+            <p class="service-desc">Our efficient delivery system ensures your healthy meals arrive fresh and on time, right to your doorstep within 30 minutes.</p>
+          </div>
+        </div>
+        <div class="service-slide">
+          <div class="service-slide-content">
+            <div class="service-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3 class="service-title">Healthy Options</h3>
+            <p class="service-desc">Customize your salad with our variety of healthy toppings and dressings, all carefully crafted to support your wellness goals.</p>
+          </div>
+        </div>
+      </div>
+      <div class="service-slider-dots">
+        <span class="service-slider-dot active"></span>
+        <span class="service-slider-dot"></span>
+        <span class="service-slider-dot"></span>
+      </div>
+    </div>
+  </div>
+</section>
 
   <section class="contact" id="contact">
     <div class="contact-container">
       <h1 class="section-title">Contact Us</h1>
-      
+
       <div class="contact-cards">
         <div class="contact-card">
           <div class="contact-icon">
@@ -1077,7 +1332,7 @@
       slides.forEach((slide, i) => {
         slide.classList.toggle('active', i === index);
       });
-      
+
       dots.forEach((dot, i) => {
         dot.classList.toggle('active', i === index);
       });
@@ -1113,11 +1368,11 @@
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        
+
         // Sort by rating (highest first) and take top 15
         topMenus = data.menu.sort((a, b) => b.rating - a.rating).slice(0, 15);
         totalPages = Math.ceil(topMenus.length / cardsPerPage);
-        
+
         renderRecommendedCards();
         renderPageDots();
       } catch (error) {
@@ -1142,11 +1397,11 @@
     function renderRecommendedCards() {
       const container = document.getElementById('recommend-cards');
       container.innerHTML = '';
-      
+
       const startIndex = currentPage * cardsPerPage;
       const endIndex = startIndex + cardsPerPage;
       const itemsToShow = topMenus.slice(startIndex, endIndex);
-      
+
       itemsToShow.forEach((item, index) => {
         const card = document.createElement('div');
         card.className = 'recommend-card';
@@ -1171,7 +1426,7 @@
     function renderPageDots() {
       const dotsContainer = document.getElementById('page-dots');
       dotsContainer.innerHTML = '';
-      
+
       for (let i = 0; i < totalPages; i++) {
         const dot = document.createElement('div');
         dot.className = 'page-dot';
@@ -1217,6 +1472,36 @@
         const title = card.querySelector('.card-title').textContent;
         alert(`Added to cart: ${title}`);
       }
+    });
+
+        let currentServiceSlide = 0;
+    const serviceSlides = document.querySelectorAll('.service-slide');
+    const serviceDots = document.querySelectorAll('.service-slider-dot');
+
+    function showServiceSlide(index) {
+      serviceSlides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+
+      serviceDots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextServiceSlide() {
+      currentServiceSlide = (currentServiceSlide + 1) % serviceSlides.length;
+      showServiceSlide(currentServiceSlide);
+    }
+
+    // Auto slide every 4 seconds
+    setInterval(nextServiceSlide, 4000);
+
+    // Click on dots to navigate
+    serviceDots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentServiceSlide = index;
+        showServiceSlide(currentServiceSlide);
+      });
     });
 
     // Initialize

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salad Sasacil - Service</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marko+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="service.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1><img src="assets/images/sasacil logo.png" alt="Salad Sasacil">Salad<span>Sasacil</span></h1>
+        </div>
+
+        <button class="burger-menu" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="nav-container">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="menu.html" class="nav-link">Menu</a>
+            <a href="#" class="nav-link">Service</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="login.html" class="login-button mobile-only">Login</a>
+        </div>
+        <a href="login.html" class="login-button desktop-only">Login</a>
+    </header>
+
+    <section class="service-card">
+        <h2 class="section-title">Service</h2>
+        <div class="menu-cards-container" id="menu-cards-container">
+            <!-- Rows will be inserted here by JavaScript -->
+        </div>
+        <div class="nav-buttons">
+            <button class="nav-btn prev-btn"><i class="fas fa-arrow-left"></i></button>
+            <button class="nav-btn next-btn"><i class="fas fa-arrow-right"></i></button>
+        </div>
+        <div class="page-dots" id="page-dots"></div>
+    </section>
+
+    <section class="coment" id="rating-section">
+        <div class="section-divider"></div>
+        <div class="rating-display">
+            <h2 class="menu-name"></h2>
+            <div class="menu-rating">
+                <i class="fas fa-star"></i><span class="rating-value">4.5</span>
+                <div style="display: flex; align-items: center; margin-left: 20px;">
+                    <div style="position: relative; margin-right: 6px;">
+                        <i class="fas fa-comment-alt" style="color: #fbbc05;"></i>
+                        <i class="fas fa-check-circle"
+                            style="position: absolute; top: -5px; right: -5px; font-size: 10px; color: white; background: #fbbc05; border-radius: 50%;"></i>
+                    </div>
+                    <span style="font-weight: 700; color: black;">12,5 rb</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonial Section -->
+        <div class="testimonial-section">
+            <div class="testimonial-header">
+                <h3 class="testimonial-title">Testimonials</h3>
+                <div class="rating-filter">
+                    <button class="rating-filter-btn active" data-filter="all">All</button>
+                    <button class="rating-filter-btn" data-filter="5">Very Good</button>
+                    <button class="rating-filter-btn" data-filter="4">Good</button>
+                    <button class="rating-filter-btn" data-filter="3">Not Good</button>
+                </div>
+            </div>
+
+            <div class="testimonial-cards" id="testimonial-cards">
+                <!-- Testimonial cards will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+    <script src="service.js"> </script>
+</body>
+
+</html>

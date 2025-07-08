@@ -7,7 +7,9 @@
     }
 
     body {
-        background: #FCDEE4;
+        background: radial-gradient(circle at bottom left, #fcdde8 0%, transparent 50%),
+            radial-gradient(circle at top right, #fcdde8 0%, transparent 50%),
+            #ffffff;
         padding-top: 70px;
         color: #3a1a2f;
     }
@@ -18,7 +20,9 @@
         top: 0;
         left: 0;
         right: 0;
-        background: #fae0e6;
+        background: radial-gradient(circle at bottom left, #fcdde8 0%, transparent 50%),
+            radial-gradient(circle at top right, #fcdde8 0%, transparent 50%),
+            #ffffff;
         box-shadow: 0 2px 6px rgba(212, 202, 204, 0.23);
         z-index: 1000;
         display: flex;
@@ -117,7 +121,6 @@
 
     /* Hero Section */
     .intro {
-        background: #ffe9f1;
         padding: 100px;
         display: flex;
         flex-wrap: wrap;
@@ -329,7 +332,6 @@
 
     /* Recommended Section */
     .recommend {
-        background: #ffe9f1;
         padding: 80px;
     }
 
@@ -486,14 +488,6 @@
         transition: background 0.3s ease;
     }
 
-    .card-btn,
-    .card-btn:visited,
-    .card-btn:hover,
-    .card-btn:active {
-    text-decoration: none;
-    }
-
-
     .card-btn:hover {
         background: #d72d5b;
     }
@@ -516,6 +510,166 @@
 
     .page-dot.active {
         background: #e83e6c;
+        transform: scale(1.2);
+    }
+
+    /* Sercice Section */
+    .service {
+        padding: 60px 0;
+    }
+
+    .service-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 0 30px;
+        gap: 40px;
+    }
+
+    .service-content {
+        flex: 1;
+        min-width: 400px;
+        max-width: 1000px;
+    }
+
+    .section-title-service {
+        position: relative;
+        padding-top: 10px;
+        padding-left: 50px;
+        font-size: 1.75rem;
+        color: #3a1a2f;
+        margin-bottom: 20px;
+    }
+
+    .section-title-service1 h2 {
+        position: relative;
+        padding-left: 50px !important;
+        font-weight: 500;
+        font-family: 'Marko One', serif;
+        font-size: 2.75rem;
+        color: #e83e6c;
+        background-color: transparent;
+        padding: 10px 0;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+
+    .section-title-service1 .black {
+        color: black;
+        font-weight: 700;
+    }
+
+    .section-title-service1 p {
+        padding-left: 50px;
+        position: relative;
+        left: 0;
+        font-size: 1rem;
+        line-height: 1.5;
+        max-width: 650px;
+        margin-bottom: 25px;
+        color: black;
+    }
+
+    .link-service {
+        left: 50px;
+        text-decoration: none;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: relative;
+        margin-top: 10px;
+        background-color: transparent;
+        color: black;
+        font-weight: 600;
+        padding: 10px 22px;
+        border: 2px solid #E91E63;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .link-service:hover {
+        background-color: #e83e6c;
+        color: white;
+    }
+
+    /* Service Slider Styles */
+    .service-slider-container {
+        flex: 1;
+        min-width: 300px;
+        max-width: 600px;
+        margin: 0;
+        right: 50px;
+        position: relative;
+    }
+
+    .service-slider {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 1rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-slide {
+        width: 100%;
+        display: none;
+        padding: 30px;
+        background: radial-gradient(circle at bottom left, #fcdde8 0%, transparent 50%),
+            radial-gradient(circle at top right, #fcdde8 0%, transparent 50%),
+            #ffffff;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .service-slide.active {
+        display: block;
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .service-slide-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .service-icon {
+        font-size: 40px;
+        color: #e83e6c;
+    }
+
+    .service-title {
+        font-family: 'Marko One', serif;
+        font-size: 1.5rem;
+        color: #3a1a2f;
+    }
+
+    .service-desc {
+        color: #555;
+        line-height: 1.6;
+    }
+
+    .service-slider-dots {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .service-slider-dot {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin: 0 6px;
+        background-color: #bbb;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .service-slider-dot.active {
+        background-color: #e83e6c;
         transform: scale(1.2);
     }
 
@@ -803,6 +957,39 @@
 
         .contact-list {
             align-items: center;
+        }
+
+        .service-container {
+            flex-direction: column;
+            padding: 0 20px;
+            gap: 30px;
+        }
+
+        .service-content {
+            max-width: 100%;
+        }
+
+        .service-slider-container {
+            max-width: 100%;
+            margin-top: 30px;
+        }
+
+        .service-slide {
+            padding: 20px;
+        }
+
+        .section-title-service1 h2 {
+            font-size: 2rem;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
         }
     }
 
