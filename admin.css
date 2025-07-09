@@ -434,6 +434,7 @@ label.fas.fa-check-circle{
     z-index: 100;
 }
 
+
 /* Card pop up*/
 .card-popup {
     background: white;
@@ -449,7 +450,7 @@ label.fas.fa-check-circle{
 .card-popup li {
     font-size: 80px;
     color: #E91E63;
-    margin: 30px;
+    margin: 30px 100px;
 }
 
 .card-popup .nama-kategori{
@@ -486,14 +487,23 @@ label.fas.fa-check-circle{
     border-radius: 5px;
     border: 1px solid #e91e63;
 }
-
+.card-popup button{
+    margin: 5px;
+    width: 100%;
+    border: 0;
+    border-radius: 20px;
+    background: #e91e63;
+}
 .card-popup form label{
     font-size: 12px;
 }
 .card-popup form label btn-open{
     width: 10px;
 }
-
+.popup-wrapper {
+    display: inline;
+    position: relative;
+}
 .order-overlay {
     position: fixed;
     top: 0;
@@ -544,12 +554,11 @@ label.fas.fa-check-circle{
 #toggleEdit:checked~.overlay {
     display: flex;
 }
-#toggleView:checked~.overlay {
+input[id^="toggleView"]:checked ~ .overlay,
+input[id^="toggleCentang"]:checked ~ .overlay {
     display: flex;
 }
-#toggleCentang:checked~.overlay {
-    display: flex;
-}
+
 
 /* START KATEGORI */
 .menu-cards {

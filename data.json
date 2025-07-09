@@ -297,28 +297,28 @@
         },
         {
             "id": "SUS1",
-            "nama_menu": "Shusi Goreng",
+            "nama_menu": "Sushi Goreng",
             "harga": 15000,
             "img": "assets/images/menu/Sushi/Sushi Goreng.jpg",
-            "kategori": "Shusi",
+            "kategori": "Sushi",
             "rating": 4.6,
             "stok": 9
         },
         {
             "id": "SUS2",
-            "nama_menu": "Shusi Mentai",
+            "nama_menu": "Sushi Mentai",
             "harga": 15000,
             "img": "assets/images/menu/Sushi/Sushi Mentai.jpg",
-            "kategori": "Shusi",
+            "kategori": "Sushi",
             "rating": 4.9,
             "stok": 0
         },
         {
             "id": "SUS3",
-            "nama_menu": "Shusi Original",
+            "nama_menu": "Sushi Original",
             "harga": 15000,
             "img": "assets/images/menu/Sushi/Sushi Original.jpg",
-            "kategori": "Shusi",
+            "kategori": "Sushi",
             "rating": 4.2,
             "stok": 9
         },
@@ -409,24 +409,14 @@
         {
             "id": "1",
             "Nama": "Sari",
-            "TotalPesanan": 4,
-            "TotalHarga": 45000,
+            "TotalPesanan": 1,
+            "TotalHarga": 36000,
             "Payment": "Cash",
-            "Status": "Uncompleted",
+            "Status": "Completed",
             "Alamat": "Jalan Mawar No. 1",
             "no_hp": "08123456789",
-            "waktu_pemesanan" : "Senin 09 Juli 2025"
-        },
-        {
-            "id": "1",
-            "Nama": "Sari",
-            "TotalPesanan": 3,
-            "TotalHarga": 45000,
-            "Payment": "Cash",
-            "Status": "Uncompleted",
-            "Alamat": "Jalan Mawar No. 1",
-            "no_hp": "08123456789",
-            "waktu_pemesanan" : "Senin 09 Juli 2025"
+            "waktu_pemesanan" : "Senin 09 Juli 2025",
+            "menuOrderan": ["Nasi Goreng Telur", "Nasi Goreng Telur"]
         },
         {
             "id": "2",
@@ -437,107 +427,8 @@
             "Status": "Uncompleted",
             "Alamat": "Jalan Mawar No. 1",
             "no_hp": "08123456789",
-            "waktu_pemesanan" : "Senin 09 Juli 2025"
-        },
-        {
-            "id": "3",
-            "Nama": "Sari",
-            "TotalPesanan": 3,
-            "TotalHarga": 45000,
-            "Payment": "Cash",
-            "Status": "Uncompleted",
-            "Alamat": "Jalan Mawar No. 1",
-            "no_hp": "08123456789",
-            "waktu_pemesanan" : "Senin 08 Juni 2025"
-        },
-
-        {
-            "id": "4",
-            "Nama": "Sari",
-            "TotalPesanan": 3,
-            "TotalHarga": 45000,
-            "Payment": "Cash",
-            "Status": "Uncompleted",
-            "Alamat": "Jalan Mawar No. 1",
-            "no_hp": "08123456789",
-            "waktu_pemesanan" : "Senin 08 Juli 2025"
-        },
-        {
-            "id": "5",
-            "Nama": "Sari",
-            "TotalPesanan": 3,
-            "TotalHarga": 45000,
-            "Payment": "Cash",
-            "Status": "Uncompleted",
-            "Alamat": "Jalan Mawar No. 1",
-            "no_hp": "08123456789",
-            "waktu_pemesanan" : "Senin 08 Juli 2025"
-        },
-        {
-            "id": "6",
-            "Nama": "Sari",
-            "TotalPesanan": 3,
-            "TotalHarga": 45000,
-            "Payment": "Cash",
-            "Status": "Uncompleted",
-            "Alamat": "Jalan Mawar No. 1",
-            "no_hp": "08123456789",
-            "waktu_pemesanan" : "Senin 02 Juli 2025"
-        },
-        {
-            "id": "7",
-            "Nama": "Sari",
-            "TotalPesanan": 3,
-            "TotalHarga": 45000,
-            "Payment": "Cash",
-            "Status": "Uncompleted",
-            "Alamat": "Jalan Mawar No. 1",
-            "no_hp": "08123456789",
-            "waktu_pemesanan" : "Senin 02 Juli 2025"
-        },
-        {
-            "id": "1",
-            "Nama": "Sari",
-            "TotalPesanan": 3,
-            "TotalHarga": 45000,
-            "Payment": "Cash",
-            "Status": "Uncompleted",
-            "Alamat": "Jalan Mawar No. 1",
-            "no_hp": "08123456789",
-            "waktu_pemesanan" : "Senin 02 Juli 2025"
-        },
-        {
-            "id": "1",
-            "Nama": "Sari",
-            "TotalPesanan": 3,
-            "TotalHarga": 45000,
-            "Payment": "Cash",
-            "Status": "Uncompleted",
-            "Alamat": "Jalan Mawar No. 1",
-            "no_hp": "08123456789",
-            "waktu_pemesanan" : "Senin 01 Juli 2025"
-        },
-        {
-            "id": "1",
-            "Nama": "Sari",
-            "TotalPesanan": 3,
-            "TotalHarga": 45000,
-            "Payment": "Cash",
-            "Status": "Completed",
-            "Alamat": "Jalan Mawar No. 1",
-            "no_hp": "08123456789",
-            "waktu_pemesanan" : "Senin 01 Juli 2025"
-        },
-        {
-            "id": "1",
-            "Nama": "Mizan",
-            "TotalPesanan": 3,
-            "TotalHarga": 45000,
-            "Payment": "Cash",
-            "Status": "Completed",
-            "Alamat": "Jalan Mawar No. 1",
-            "no_hp": "08123456789",
-            "waktu_pemesanan" : "Senin 01 Juli 2025"
+            "waktu_pemesanan" : "Senin 09 Juli 2025",
+            "menuOrderan": ["Nasi Goreng Telur", "Nasi Goreng Telur"]
         }
     ]
 }

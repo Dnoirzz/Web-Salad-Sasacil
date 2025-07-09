@@ -21,6 +21,7 @@
             </div>
             <i class="fas fa-bell"></i>
             <i class="user">
+                <!-- <textarea name="" id=""></textarea> -->
                 <img src="/assets/images/menu/Drink/Avocado Smoothies.png" alt="">
             </i>
         </div>
@@ -54,7 +55,7 @@
 
                 <!-- logout -->
                 <li>
-                    <a href="index.html">
+                    <a href="#">
                         <i class="fas fa-sign-out"></i>
                         <div>Logout</div>
                     </a>
@@ -111,54 +112,55 @@
                     
                     let filtered = status === 'all' ? allOrders : allOrders.filter(item => item.Status.toLowerCase() === status);
                     filtered.forEach((item, index) => {
+
     let viewIdOrder = `toggleView-${item.id}-${index}`;
     let centangId = `toggleCentang-${item.id}-${index}`;
 
     const card = document.createElement('tr');
     card.className = 'menu-orderan';
     let statusClass = item.Status.toLowerCase() === "completed" ? "status-completed" : "status-uncompleted";
+     let actionHtml = `
+    <!-- VIEW -->
+    <input type="checkbox" id="${viewIdOrder}" hidden />
+    <label for="${viewIdOrder}" class="fas fa-eye"></label>
+    <div class="overlay overlay-view">
+        <div class="card-popup">
+            <label for="${viewIdOrder}" class="close-btn">&times;</label>
+            <form>
+                <label style="font-size:40px;margin-left:70px;color:#e91e63">#${item.id}</label><br>
+                <label>Nama:</label>
+                <input type="text" value="${item.Nama}" disabled><br>
+                <label>Total Pesanan:</label>
+                <input type="text" value="${item.TotalPesanan}" disabled><br>
+                <label>Total Harga:</label>
+                <input type="text" value="Rp${item.TotalHarga.toLocaleString()}" disabled><br>
+                <label>Pesanan:</label>
+                <textarea style="width:100%" disabled>${Array.isArray(item.menuOrderan) ? item.menuOrderan.join('\n') : item.menuOrderan}</textarea><br>
+                <label>Payment:</label>
+                <input type="text" value="${item.Payment}" disabled><br>
+                <label>Status:</label>
+                <input type="text" value="${item.Status}" disabled><br>
+            </form>
+        </div>
+    </div>
+`;
 
-    let actionHtml = `
-    <input type="checkbox" id="toggleView" />
-                        <label for="toggleView" class="fas fa-eye"></label>
-                        <div class="overlay">
-                            <div class="card-popup">
-                                <label for="toggleView" class="close-btn">&times;</label>
-                                <form>
-                                    <label>Nama:</label>
-                                    <input type="text" value="${item.Nama}" disabled><br>
-                                    <label>Total Pesanan:</label>
-                                    <input type="text" value="${item.TotalPesanan}" disabled><br>
-                                    <label>Total Harga:</label>
-                                    <input type="text" value="Rp${item.TotalHarga.toLocaleString()}" disabled><br>
-                                    <label>Payment:</label>
-                                    <input type="text" value="${item.Payment}" disabled><br>
-                                    <label>Status:</label>
-                                    <input type="text" value="${item.Status}" disabled><br>
-                                    <label>Alamat:</label>
-                                    <textarea disabled>${item.Alamat}</textarea><br>
-                                    <label>No HP:</label>
-                                    <input type="text" value="${item.no_hp}" disabled><br>
-                                    <label>Waktu Pemesanan:</label>
-                                    <input type="text" value="${item.waktu_pemesanan}" disabled><br>
-                                </form>
-                            </div>
-                        </div>`;
-
-    // Jika belum completed, tampilkan tombol centang
-    if (item.Status.toLowerCase() !== "completed") {
-        actionHtml += `
-        <input type="checkbox" id="toggleCentang" hidden />
-    <label for="toggleCentang" class="fas fa-check-circle"></label>
+if (item.Status.toLowerCase() !== "completed") {
+    actionHtml += `
+    <div class="popup-wrapper">
+    <!-- CENTANG -->
+    <input type="checkbox" id="${centangId}" hidden />
+    <label for="${centangId}" class="fas fa-check-circle"></label>
     <div class="overlay">
         <div class="card-popup">
-            <label for="toggleCentang" class="close-btn">&times;</label>
-            <p style="margin: 0 0 10px 0;">Konfirmasi pesanan <strong>${item.Nama}</strong> sebagai <span style="color:green;"><strong>Completed</strong></span>?</p>
-            <button style="padding: 5px 10px;">Konfirmasi</button>
+            <label for="${centangId}" class="close-btn">&times;</label>
+            <label style="font-size:40px;margin-left:70px;color:#e91e63">#${item.id}</label><br>
+            <p>Konfirmasi pesanan <strong>${item.Nama}</strong> sebagai <span style="color:green;"><strong>Completed</strong></span>?</p>
+            <button>Konfirmasi</button>
         </div>
-    </div>`;
-    }
-
+    </div>
+</div>`;
+}
     card.innerHTML = `
         <td>${item.id}</td>
         <td>${item.Nama}</td>
