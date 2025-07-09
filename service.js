@@ -169,7 +169,7 @@
                             <span class="card-rating"><i class="fas fa-star"></i><span> ${item.rating}</span></span>
                             <h3 class="card-title">${item.nama_menu}</h3>
                             <p class="card-price">Rp ${item.harga.toLocaleString('id-ID')}</p>
-                            <a href="menu.html" class="card-btn">Order Now</a>
+                            <a href="login.html" class="card-btn">Order Now</a>
                         </div>
                     `;
                     
@@ -318,7 +318,7 @@
             if (e.target.classList.contains('card-btn')) {
                 const card = e.target.closest('.menu-card');
                 const title = card.querySelector('.card-title').textContent;
-                alert(`Anda akan memesan: ${title}`);
+                alert(`Harap Login Terlebih Dahulu !`);
             }
         });
 
