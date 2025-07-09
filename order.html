@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Order</title>
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="styleguide.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="dashboard-pelanggan">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="logo">
+                <img src="assets/images/sasacil logo.png" alt="Logo" class="logo-img" />
+                <h1 class="logo-text"><span class="text-black">Salad</span> <span class="text-pink">Sasacil</span></h1>
+            </div>
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <img src="assets/img/IMG_6367.JPG" alt="User Avatar" class="avatar-img" />
+                </div>
+                <div class="user-welcome">
+                    <p>Welcome,</p>
+                    <h2>Endang Listyowati</h2>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item" id="nav-menu"><a href="dashboard_1.html"><img src="assets/icon/Menu.png" />
+                        Menu</a></li>
+                <li class="nav-item active" id="nav-order"><a href="#"><img src="assets/icon/order.png" /> Order</a>
+                </li>
+                <li class="nav-item" id="nav-payment"><a href="#"><img src="assets/icon/payment.png" /> Payment</a></li>
+                <li class="nav-item"><a href="#"><img src="assets/icon/logout.png" /> Logout</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="order-main">
+            <h2 class="order-title">Current Order</h2>
+            <div id="order-list" class="order-list"></div>
+
+            <!-- Summary -->
+            <div class="order-summary">
+                <h3>Summary</h3>
+                <div class="summary-row"><span>Subtotal</span><span id="summary-subtotal">Rp 0,00</span></div>
+                <div class="summary-row"><span>Discount</span><span>-Rp 0</span></div>
+                <div class="summary-row"><span>Quantity</span><span id="summary-quantity">0</span></div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span class="price-green" id="summary-total">Rp 0,00</span>
+                </div>
+                <button class="order-btn bayar-btn" id="btn-bayar">Bayar</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal QR Code -->
+    <div id="qrModal" class="qr-modal" style="display: none;">
+        <div class="qr-content">
+            <h3>Scan untuk Bayar</h3>
+            <img id="qrImage" src="" alt="QR Code" />
+            <p>Total Bayar: <strong id="qrTotal">Rp 0,00</strong></p>
+            <button class="order-btn" onclick="closeQR()">Tutup</button>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script>
+        function renderOrderItems() {
+            const list = document.getElementById("order-list");
+            const data = JSON.parse(localStorage.getItem("orderItems")) || [];
+
+            list.innerHTML = "";
+            if (data.length === 0) {
+                list.innerHTML = "<p style='text-align:center;'>Belum ada pesanan.</p>";
+                updateSummary();
+                return;
+            }
+
+            data.forEach((item, index) => {
+                list.innerHTML += `
+          <div class="order-card">
+            <img src="${item.image}" alt="${item.name}" class="order-image" />
+            <div class="order-info">
+              <h3>${item.name}</h3>
+              <p class="price-green">Rp ${item.price.toLocaleString("id-ID")},00 <span class="text-gray">x <span class="quantity">${item.quantity}</span></span></p>
+              <p class="order-change" onclick="goToMenu()"><img src="assets/icon/edit.png" /> Change</p>
+            </div>
+            <div class="order-qty">
+              <button class="qty-btn btn-minus" data-index="${index}">−</button>
+              <span class="qty-value">${item.quantity}</span>
+              <button class="qty-btn btn-plus" data-index="${index}">+</button>
+            </div>
+            <div class="order-delete">
+              <button class="trash-btn btn-delete" data-index="${index}">
+                <img src="assets/icon/Sampah.png" alt="Delete" />
+              </button>
+            </div>
+          </div>
+        `;
+            });
+
+            setupButtons();
+            updateSummary();
+        }
+
+        function setupButtons() {
+            document.querySelectorAll(".btn-plus").forEach(btn => {
+                btn.onclick = () => {
+                    const i = +btn.dataset.index;
+                    let items = JSON.parse(localStorage.getItem("orderItems"));
+                    items[i].quantity++;
+                    localStorage.setItem("orderItems", JSON.stringify(items));
+                    renderOrderItems();
+                };
+            });
+
+            document.querySelectorAll(".btn-minus").forEach(btn => {
+                btn.onclick = () => {
+                    const i = +btn.dataset.index;
+                    let items = JSON.parse(localStorage.getItem("orderItems"));
+                    if (items[i].quantity > 1) {
+                        items[i].quantity--;
+                        localStorage.setItem("orderItems", JSON.stringify(items));
+                        renderOrderItems();
+                    }
+                };
+            });
+
+            document.querySelectorAll(".btn-delete").forEach(btn => {
+                btn.onclick = () => {
+                    const i = +btn.dataset.index;
+                    let items = JSON.parse(localStorage.getItem("orderItems"));
+                    items.splice(i, 1);
+                    localStorage.setItem("orderItems", JSON.stringify(items));
+                    renderOrderItems();
+                };
+            });
+        }
+
+        function updateSummary() {
+            let items = JSON.parse(localStorage.getItem("orderItems")) || [];
+            let subtotal = 0;
+            let qty = 0;
+            items.forEach(item => {
+                subtotal += item.price * item.quantity;
+                qty += item.quantity;
+            });
+
+            document.getElementById("summary-subtotal").textContent = `Rp ${subtotal.toLocaleString("id-ID")},00`;
+            document.getElementById("summary-quantity").textContent = qty;
+            document.getElementById("summary-total").textContent = `Rp ${subtotal.toLocaleString("id-ID")},00`;
+        }
+
+        function goToMenu() {
+            window.location.href = "dashboard_1.html";
+        }
+
+
+        // Fungsi QR unik berdasarkan waktu dan total
+        function generateQR(total) {
+            const kode = Math.floor(Math.random() * 10000000000);
+            return `https://api.qrserver.com/v1/create-qr-code/?data=SALADSASACIL-${kode}-Rp${total}&size=200x200`;
+        }
+
+        // Tombol Bayar
+        document.getElementById("btn-bayar").addEventListener("click", function () {
+            const items = JSON.parse(localStorage.getItem("orderItems") || "[]");
+            if (items.length === 0) {
+                alert("Pesanan kosong!");
+                return;
+            }
+
+            const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            document.getElementById("qrImage").src = generateQR(total);
+            document.getElementById("qrTotal").textContent = `Rp ${total.toLocaleString("id-ID")},00`;
+            document.getElementById("qrModal").style.display = "flex";
+
+            // Aktifkan nav payment
+            setActiveNav("nav-payment");
+
+            // Kosongkan pesanan setelah konfirmasi
+            localStorage.removeItem("orderItems");
+            renderOrderItems();
+        });
+
+        // Tutup modal
+        function closeQR() {
+            document.getElementById("qrModal").style.display = "none";
+        }
+
+        // Ganti active nav
+        function setActiveNav(idAktif) {
+            document.querySelectorAll(".nav-item").forEach(nav => nav.classList.remove("active"));
+            const active = document.getElementById(idAktif);
+            if (active) active.classList.add("active");
+        }
+
+
+        // Inisialisasi
+        window.onload = () => {
+            renderOrderItems();
+            setActiveNav("nav-order");
+        };
+    </script>
+</body>
+
+</html>

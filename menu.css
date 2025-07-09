@@ -266,7 +266,7 @@
         /* View All/Hide Items Text Link */
         .view-all-container {
             text-align: right;
-            margin-top: 20px;
+            margin-top: 0 !important;
         }
 
         .view-all-link {
@@ -612,4 +612,112 @@
 
         .burger-menu.active span:last-child {
             transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Extra Small Devices (portrait phones, < 576px) */
+        @media (max-width: 575.98px) {
+
+            .section-title,
+            .section-title2,
+            .section-title3,
+            .section-title4 {
+                font-size: 1.5rem;
+            }
+
+            .search-input-wrapper input {
+                font-size: 12px;
+                padding: 8px 12px 8px 36px;
+            }
+
+            .card-btn,
+            .kategori-card .card-btn {
+                padding: 6px 10px;
+                font-size: 12px;
+            }
+
+            .menu-card {
+                padding: 20px 5px;
+                min-width: 80px;
+                border-radius: 80px;
+            }
+
+            .menu-name {
+                font-size: 13px;
+            }
+
+            .card-price {
+                font-size: 13px;
+            }
+        }
+
+        /* Small Devices (landscape phones, 576px to 767px) */
+        @media (min-width: 576px) and (max-width: 767.98px) {
+            .search-input-wrapper input {
+                font-size: 13px;
+            }
+
+            .card-title {
+                font-size: 15px;
+            }
+
+            .card-price {
+                font-size: 14px;
+            }
+
+            .menu-name {
+                font-size: 14px;
+            }
+        }
+
+        /* Medium Devices (tablets, 768px to 991px) */
+        @media (min-width: 768px) and (max-width: 991.98px) {
+
+            .section-title,
+            .section-title2,
+            .section-title3,
+            .section-title4 {
+                font-size: 1.8rem;
+            }
+
+            .search-input-wrapper {
+                max-width: 400px;
+            }
+
+            .menu-cards {
+                gap: 30px;
+            }
+
+            .menu-card {
+                min-width: 100px;
+            }
+        }
+
+        /* Large Devices (desktops, 992px to 1199px) */
+        @media (min-width: 992px) and (max-width: 1199.98px) {
+            .menu-cards {
+                gap: 40px;
+            }
+
+            .menu-card {
+                padding: 35px 8px;
+            }
+
+            .card-btn {
+                font-size: 13px;
+            }
+        }
+
+        /* Extra Large Devices (large desktops, ≥1200px) */
+        @media (min-width: 1200px) {
+            main {
+                padding: 40px 80px;
+            }
+
+            .menu-cards {
+                gap: 60px;
+            }
+
+            .menu-card {
+                padding: 45px 12px;
+            }
         }

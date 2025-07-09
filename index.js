@@ -1,4 +1,4 @@
-    // Burger Menu Toggle
+// Burger Menu Toggle
     const burgerMenu = document.querySelector('.burger-menu');
     const navContainer = document.querySelector('.nav-container');
 
@@ -107,7 +107,7 @@
             <span class="card-rating"><i class="fas fa-star"></i><span> ${item.rating}</span></span>
             <h3 class="card-title">${item.nama_menu}</h3>
             <p class="card-price">Rp ${item.harga.toLocaleString('id-ID')},00</p>
-            <button class="card-btn">Order Now</button>
+            <a href="login.html" class="card-btn">Order Now</a>
           </div>
         `;
         container.appendChild(card);
@@ -162,7 +162,7 @@
       if (e.target.classList.contains('card-btn')) {
         const card = e.target.closest('.recommend-card');
         const title = card.querySelector('.card-title').textContent;
-        alert(`Added to cart: ${title}`);
+        alert(`Harap Login Terlebih Dahulu`);
       }
     });
 

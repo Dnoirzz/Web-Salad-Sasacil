@@ -84,6 +84,13 @@
       color: #e83e6c;
     }
 
+    .login-form{
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
     .input-group {
       width: 100%;
       max-width: 400px;
@@ -201,31 +208,120 @@
       text-decoration: none;
     }
 
-    @media (max-width: 768px) {
-      .container {
-        display: flex;
-        flex-direction: column;
-      }
+@media (max-width: 1200px) {
+  .left-content {
+    padding: 120px 40px;
+    gap: 20px;
+  }
 
-      .left {
-        display: none;
-      }
+  .left h1 {
+    font-size: 28px;
+  }
 
-      .right {
-        padding: 40px 20px;
-      }
+  .right h2 {
+    font-size: 48px;
+  }
+}
 
-      .right h2 {
-        font-size: 32px;
-      }
+@media (max-width: 992px) {
+  .left-content {
+    padding: 100px 30px;
+  }
 
-      .input-group input {
-        font-size: 16px;
-        padding: 12px;
-      }
+  .left h1 {
+    font-size: 24px;
+  }
 
-      .btn-login {
-        font-size: 16px;
-        padding: 12px;
-      }
-    }
+  .left p {
+    font-size: 13px;
+  }
+
+  .right h2 {
+    font-size: 40px;
+  }
+
+  .input-group input {
+    font-size: 13px;
+  }
+
+  .btn-login {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left {
+    display: none;
+  }
+
+  .right {
+    padding: 40px 20px;
+  }
+
+  .right h2 {
+    font-size: 32px;
+  }
+
+  .input-group input {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .btn-login {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .right h2 {
+    font-size: 28px;
+  }
+
+  .input-group input {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .btn-login {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .forgot,
+  .signup {
+    font-size: 11px;
+  }
+
+  .social-login {
+    font-size: 11px;
+  }
+
+  .social-icons img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 400px) {
+  .right h2 {
+    font-size: 24px;
+  }
+
+  .input-group input {
+    font-size: 12px;
+  }
+
+  .btn-login {
+    font-size: 13px;
+  }
+
+  .social-icons {
+    gap: 12px;
+  }
+}

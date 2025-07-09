@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="admin.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="topbar">
+            <div class="logo">
+                <img src="assets/images/sasacil logo.png" alt="" />
+                <h4>Salad <span style="color: #e91e63">Sasacil</span></h4>
+            </div>
+
+            <i class="fas fa-bell"></i>
+            <i class="user">
+                <img src="/assets/images/menu/Drink/Avocado Smoothies.png" alt="" />
+            </i>
+        </div>
+
+        <!-- sidebar -->
+        <div class="sidebar">
+            <ul>
+                <!-- dashboard -->
+                <li>
+                    <a href="adminfiks.html">
+                        <i class="fas fa-th-large"></i>
+                        <div>Dashboard</div>
+                    </a>
+                </li>
+
+                <!-- order -->
+                <li>
+                    <a href="orderfiks.html">
+                        <i class="fas fa-cart-plus"></i>
+                        <div>Order</div>
+                    </a>
+                </li>
+
+                <!-- product -->
+                <li class="active">
+                    <a href="product.html">
+                        <i class="fas fa-archive"></i>
+                        <div>Product</div>
+                    </a>
+                </li>
+
+                <!-- logout -->
+                <li>
+                    <a href="index.html">
+                        <i class="fas fa-sign-out"></i>
+                        <div>Logout</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- main isi untuk menu -->
+        <div class="main">
+            <div class="kategori">
+                <h1>Product</h1>
+                <hr style="margin-top: 10px;">
+                <div class="search-order">
+                    <input type="text" id="seacrh-order" placeholder="search here">
+                    <label for="search-order"><i class="fas fa-search"></i></label>
+                </div>
+                <div class="k-card">
+                    <div class="kategori">
+                        <!-- head -->
+                        <div class="head-kategori">
+                            <h3>Kategori</h3>
+
+                            <input type="checkbox" id="toggleCard" />
+
+                            <!-- Tombol -->
+                            <label for="toggleCard" class="btn-open">Add Kategori </label>
+                            <!-- <button class="fa fa-add"></button> -->
+                            <div class="overlay">
+                                <div class="card-popup">
+                                    <label for="toggleCard" class="close-btn">&times;</label>
+                                    <h3>Tambah <span style="color: #e91e63;">Kategori</span></h3>
+                                    <li class="fa fa-basket-shopping" style="justify-self: center; font-size: 50px;">
+                                    </li>
+                                    <form class="add-kategori">
+                                        <label for="fname" class="nama-kategori">Nama Kategori:</label><br>
+                                        <input type="text" id="fname" name="fname"><br>
+                                        <input type="submit" value="Submit">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- kategorri -->
+                    <div class="menu-cards">
+                        <div class="menu-card" data-kategori="salad"">
+                            <div class=" image-placeholder">
+                            <img src="assets/images/menu/Salad/salad Buah 300ml Cream Cheese.webp" alt="Salad" />
+                        </div>
+                        <div class="number">Salad</div>
+                        <div class="card-name">8 Item</div>
+                    </div>
+                    <div class="menu-card" data-kategori="drink"">
+                            <div class=" image-placeholder">
+                        <img src="assets/images/menu/drink/Avocado Smoothies.png" alt="Drink" />
+                    </div>
+                    <div class="number">Drink</div>
+                    <div class="card-name">9 Item</div>
+                </div>
+                <div class="menu-card" data-kategori="sablak"">
+                            <div class=" image-placeholder">
+                    <img src="assets/images/menu/Seblak/Seblak Ceker.jpg" alt="Seblak" />
+                </div>
+                <div class="number">Sablak</div>
+                <div class="card-name">6 Item</div>
+            </div>
+            <div class="menu-card" data-kategori="shusi">
+                <div class="image-placeholder">
+                    <img src="assets/images/menu/Sushi/Sushi Mentai.jpg" alt="Shusi" />
+                </div>
+
+                <div class="number">Sushi</div>
+                <div class="card-name">3 Item</div>
+            </div>
+            <div class="menu-card" data-kategori="dimsum">
+                <div class="image-placeholder">
+                    <img src="assets/images/menu/Dimsum/Dimsum ayam.jpg" alt="Dimsum" />
+                </div>
+
+                <div class="number">Dimsum</div>
+                <div class="card-name">7 Item</div>
+            </div>
+            <div class="menu-card" data-kategori="makanan">
+                <div class="image-placeholder">
+                    <img src="assets/images/menu/Makanan/Nasi goreng.jpg" alt="Makanan" />
+                </div>
+                <div class="number">Makanan</div>
+                <div class="card-name">9 Item</div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- END KATEGORI -->
+    <!--  -->
+
+    <div class="menu-kategori-card">
+        <div class="menu">
+            <!-- head -->
+            <div class="head-menu">
+                <h4 id="judulKategori">Menu <span style="color: #e91e63;">Salad</span></h4>
+
+                <input type="checkbox" id="toggleMenu" />
+
+                <!-- Tombol -->
+                <label for="toggleMenu" class="btn-open">Add Product </label>
+                <!-- <button class="fa fa-add"></button> -->
+                <div class="overlay">
+                    <div class="card-popup">
+                        <label for="toggleMenu" class="close-btn">&times;</label>
+                        <h3>Tambah <span style="color: #e91e63;">Kategori</span></h3>
+                        <!-- <li class="fa fa-add" style="justify-self: center;"></li> -->
+                        <form class="add-menu">
+                            <label for="nama">Nama Produk:</label>
+                            <input type="text" id="nama" name="nama" required><br>
+
+                            <label for="kategori">Jenis Kategori:</label>
+                            <select id="kategori" name="jenis-kategori" required>
+                                <option value="">-- Pilih Kategori --</option>
+                                <option value="salad">Salad</option>
+                                <option value="drink">Drink</option>
+                                <option value="sablak">Sablak</option>
+                                <option value="sushi">Sushi</option>
+                                <option value="dimsum">Dimsum</option>
+                                <option value="makanan">Makanan</option>
+                            </select><br>
+
+                            <label for="harga">Harga:</label>
+                            <input type="text" id="harga" name="harga" required><br>
+
+                            <label for="stok">Stok:</label>
+                            <input type="number" id="stok" name="stok" required><br>
+
+                            <label for="gambar">Gambar:</label>
+                            <input type="file" id="gambar" name="gambar" required><br>
+
+                            <input type="submit" value="Simpan">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- kategorri-SALAD -->
+        <div class="menu-cards-kategori" id="menuContainer">
+        </div>
+    </div>
+
+
+
+    <div class="main-order"></div>
+    </div>
+    <script>
+        let semuaMenu = []; // untuk menyimpan data menu global
+
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                semuaMenu = data.menu;
+                renderMenuByKategori("salad"); // default pertama: salad
+
+                // Tambahkan event listener ke semua menu-card kategori
+                document.querySelectorAll(".menu-card").forEach(card => {
+                    card.addEventListener("click", () => {
+                        const kategori = card.dataset.kategori.toLowerCase();
+                        renderMenuByKategori(kategori);
+                    });
+                });
+            });
+
+        function renderMenuByKategori(kategoriDipilih) {
+            const judul = document.getElementById("judulKategori");
+            judul.innerHTML = `Menu <span style="color: #e91e63;">${kategoriDipilih.charAt(0).toUpperCase() + kategoriDipilih.slice(1)}</span>`;
+            
+            const menuContainer = document.getElementById("menuContainer");
+            menuContainer.innerHTML = ""; // Kosongkan
+
+            const menuItems = semuaMenu.filter(item =>
+                item.kategori.toLowerCase() === kategoriDipilih
+            );
+
+            menuItems.forEach(item => {
+                const uniqueId = `toggleEdit-${item.id}`;
+                const card = document.createElement("div");
+                card.className = "menu-produk";
+                if (item.stok <= 0) {
+                    card.classList.add("stok-habis");
+                }
+
+                card.innerHTML = `
+                <div class="image-placeholder-product">
+                    <img src="${item.img}" alt="${item.nama_menu}" />
+                    ${item.stok <= 0 ? '<div class="stok-overlay">Stok Habis</div>' : ''}
+                </div>
+                <div class="info-product" style="padding : 15px;">
+                    <div class="rating">
+                        <div class="card-rating" style="border: 1px solid #E91E63; border-radius:10px; width: 50px; padding:2px;">⭐ ${item.rating}</div>
+                        <div class="stok">Stok : ${item.stok}</div>
+                    </div>
+                    <div class="card-name">${item.nama_menu}</div>
+                    <div class="card-price">Rp${item.harga.toLocaleString()}</div>
+                    <div style="display: flex; justify-content: flex-end;">
+                        <input type="checkbox" id="toggleEdit" />
+                                        <label for="toggleEdit" class="btn-open-edit style="text-align:right">Edit</label>
+
+                        <div class="overlay">
+                            <div class="card-popup">
+                                <label for="toggleEdit" class="close-btn">&times;</label>
+                                <h3>Edit <span style="color: #e91e63;">Menu</span></h3>
+
+                                <form class="edit-produk">
+                                    <label>Nama Produk:</label>
+                                    <input type="text" name="nama" required value="${item.nama_menu}"><br>
+
+                                    <label>Jenis Kategori:</label>
+                                    <select name="jenis-kategori" required>
+                                        <option value="">-- Pilih Kategori --</option>
+                                        <option value="salad">Salad</option>
+                                        <option value="drink">Drink</option>
+                                        <option value="sablak">Sablak</option>
+                                        <option value="sushi">Sushi</option>
+                                        <option value="dimsum">Dimsum</option>
+                                        <option value="makanan">Makanan</option>
+                                    </select><br>
+
+                                    <label>Harga:</label>
+                                    <input type="text" name="harga" required value="${item.harga}"><br>
+
+                                    <label>Stok:</label>
+                                    <input type="number" name="stok" required value="${item.stok}"><br>
+
+                                    <label>Gambar:</label>
+                                    <input type="file" name="gambar"><br>
+
+                                    <input type="submit" value="Simpan">
+                                </form>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+            `;
+                menuContainer.appendChild(card);
+            });
+        }
+
+        // Handler simpan
+        // document.addEventListener("submit", function (e) {
+        //     if (e.target.classList.contains("edit-produk")) {
+        //         e.preventDefault();
+        //         alert("Perubahan disimpan!");
+        //         e.target.closest(".overlay").previousElementSibling.checked = false;
+        //     }
+        // });
+    </script>
+
+    <!
+</body>
+
+</html>

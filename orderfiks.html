@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="topbar">
+            <div class="logo">
+                <img src="assets/images/sasacil logo.png" alt="">
+                <h4>Salad <span style="color: #E91E63;">Sasacil</span></h4>
+
+            </div>
+            <i class="fas fa-bell"></i>
+            <i class="user">
+                <img src="/assets/images/menu/Drink/Avocado Smoothies.png" alt="">
+            </i>
+        </div>
+
+        <!-- sidebar -->
+        <div class="sidebar">
+            <ul>
+                <!-- dashboard -->
+                <li>
+                    <a href="adminfiks.html">
+                        <i class="fas fa-th-large"></i>
+                        <div>Dashboard</div>
+                    </a>
+                </li>
+
+                <!-- order -->
+                <li class="active">
+                    <a href="orderfiks.html">
+                        <i class="fas fa-cart-plus"></i>
+                        <div>Order</div>
+                    </a>
+                </li>
+
+                <!-- product -->
+                <li>
+                    <a href="product.html">
+                        <i class="fas fa-archive"></i>
+                        <div>Product</div>
+                    </a>
+                </li>
+
+                <!-- logout -->
+                <li>
+                    <a href="index.html">
+                        <i class="fas fa-sign-out"></i>
+                        <div>Logout</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- main isi untuk menu -->
+        <div class="main">
+            <div class="judul">
+                <h1>Order</h1>
+                <hr style="margin-top: 10px;">
+                <div class="search-order">
+                    <input type="text" id="seacrh-order" placeholder="search here">
+                    <label for="search-order"><i class="fas fa-search"></i></label>
+                </div>
+            </div>
+            <div class="filter-tabs" style="margin-top: 30px;">
+                <!-- totoal tabs -->
+                <div class="tabs" style="margin-bottom: 15px;">
+                    <button onclick="filterOrders('all')">All Orders</button>
+                    <button onclick="filterOrders('completed')">Completed</button>
+                    <button onclick="filterOrders('uncompleted')">Uncompleted</button>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nama</th>
+                        <th>Total Pesanan</th>
+                        <th>Total Harga</th>
+                        <th>Payment</th>
+                        <th>Status</th>
+                        <th>Alamat</th>
+                        <th>No Hp</th>
+                        <th>Waktu Pemesanan</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="orderanUsers">
+
+                </tbody>
+            </table>
+
+
+            <script>
+                let allOrders = [];
+
+                function filterOrders(status) {
+                    const orderanUsers = document.getElementById('orderanUsers');
+                    orderanUsers.innerHTML = "";
+                    
+                    let filtered = status === 'all' ? allOrders : allOrders.filter(item => item.Status.toLowerCase() === status);
+                    filtered.forEach((item, index) => {
+    let viewIdOrder = `toggleView-${item.id}-${index}`;
+    let centangId = `toggleCentang-${item.id}-${index}`;
+
+    const card = document.createElement('tr');
+    card.className = 'menu-orderan';
+    let statusClass = item.Status.toLowerCase() === "completed" ? "status-completed" : "status-uncompleted";
+
+    let actionHtml = `
+    <input type="checkbox" id="toggleView" />
+                        <label for="toggleView" class="fas fa-eye"></label>
+                        <div class="overlay">
+                            <div class="card-popup">
+                                <label for="toggleView" class="close-btn">&times;</label>
+                                <form>
+                                    <label>Nama:</label>
+                                    <input type="text" value="${item.Nama}" disabled><br>
+                                    <label>Total Pesanan:</label>
+                                    <input type="text" value="${item.TotalPesanan}" disabled><br>
+                                    <label>Total Harga:</label>
+                                    <input type="text" value="Rp${item.TotalHarga.toLocaleString()}" disabled><br>
+                                    <label>Payment:</label>
+                                    <input type="text" value="${item.Payment}" disabled><br>
+                                    <label>Status:</label>
+                                    <input type="text" value="${item.Status}" disabled><br>
+                                    <label>Alamat:</label>
+                                    <textarea disabled>${item.Alamat}</textarea><br>
+                                    <label>No HP:</label>
+                                    <input type="text" value="${item.no_hp}" disabled><br>
+                                    <label>Waktu Pemesanan:</label>
+                                    <input type="text" value="${item.waktu_pemesanan}" disabled><br>
+                                </form>
+                            </div>
+                        </div>`;
+
+    // Jika belum completed, tampilkan tombol centang
+    if (item.Status.toLowerCase() !== "completed") {
+        actionHtml += `
+        <input type="checkbox" id="toggleCentang" hidden />
+    <label for="toggleCentang" class="fas fa-check-circle"></label>
+    <div class="overlay">
+        <div class="card-popup">
+            <label for="toggleCentang" class="close-btn">&times;</label>
+            <p style="margin: 0 0 10px 0;">Konfirmasi pesanan <strong>${item.Nama}</strong> sebagai <span style="color:green;"><strong>Completed</strong></span>?</p>
+            <button style="padding: 5px 10px;">Konfirmasi</button>
+        </div>
+    </div>`;
+    }
+
+    card.innerHTML = `
+        <td>${item.id}</td>
+        <td>${item.Nama}</td>
+        <td>${item.TotalPesanan}</td>
+        <td>Rp${item.TotalHarga.toLocaleString()}</td>
+        <td>${item.Payment}</td>
+        <td><span class="${statusClass}">${item.Status}</span></td>
+        <td>${item.Alamat}</td>
+        <td>${item.no_hp}</td>
+        <td>${item.waktu_pemesanan}</td>
+        <td class="Action">${actionHtml}</td>
+    `;
+
+    orderanUsers.appendChild(card);
+});
+                }
+                fetch('data.json')
+                    .then(res => res.json())
+                    .then(data => {
+                        allOrders = data.orderan;
+                        filterOrders('all');
+                    })
+                    .catch(err => console.error("Gagal fetch:", err));
+
+            </script>
+</body>
+
+</html>

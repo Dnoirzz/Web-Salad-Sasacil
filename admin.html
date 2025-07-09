@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="topbar">
+            <div class="logo">
+                <img src="assets/images/sasacil logo.png" alt="">
+                <h4>Salad <span style="color: #E91E63;">Sasacil</span></h4>
+
+            </div>
+            <i class="fas fa-bell"></i>
+            <i class="user">
+                <img src="/assets/images/menu/Drink/Avocado Smoothies.png" alt="">
+            </i>
+        </div>
+
+        <!-- sidebar -->
+        <div class="sidebar">
+            <ul>
+                <!-- dashboard -->
+                <li class="active">
+                    <a href="admin.html">
+                        <i class="fas fa-th-large"></i>
+                        <div>Dashboard</div>
+                    </a>
+                </li>
+
+                <!-- order -->
+                <li>
+                    <a href="orderfiks.html">
+                        <i class="fas fa-cart-plus"></i>
+                        <div>Order</div>
+                    </a>
+                </li>
+
+                <!-- product -->
+                <li>
+                    <a href="product.html">
+                        <i class="fas fa-archive"></i>
+                        <div>Product</div>
+                    </a>
+                </li>
+
+                <!-- logout -->
+                <li>
+                    <a href="index.html">
+                        <i class="fas fa-sign-out"></i>
+                        <div>Logout</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- main isi untuk menu -->
+        <div class="main" id="dashboard">
+            <div class="judul">
+                <h1 style="padding-bottom: 20px;">Dashboard <span style="color: #E91E63;">Overview</span></h1>
+            </div>
+            <div class="cards">
+                <!-- totoal order -->
+                <div class="card" id="analisisOrder">
+                    <div class="card-content">
+                        <div class="number">50000</div>
+                        <div class="card-name">Total Orders</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-cart-plus"></i>
+                    </div>
+                </div>
+                <!-- totalpelanggan -->
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">50000</div>
+                        <div class="card-name">Total Pelanggan</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+                <!-- totaal inchome -->
+                <div class="card" id="analisisInchome">
+                    <div class="card-content">
+                        <div class="number">$50000</div>
+                        <div class="card-name">Total Inchome</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fa fa-money-check"></i>
+                    </div>
+                </div>
+                <!-- total product -->
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">16</div>
+                        <div class="card-name">Total Product</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-archive"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="charts">
+                <div class="chart">
+                    <div class="analisi-head">
+                        <h2 id="chartTitle">Analisis</h2>
+                        <select>
+                            <option value="">2023</option>
+                            <option value="">2024</option>
+                            <option value="">2025</option>
+                        </select>
+                    </div>
+                    <canvas id="lineChart"></canvas>
+                </div>
+            </div>
+            <div class="last-order">
+                <div class="last-order-head">
+                    <h2>Last Order</h2>
+                    <ul>
+                        <li>
+                            <a href="orderfiks.html" class="btn">View All</a>
+                        </li>
+                    </ul>
+                </div>
+                 <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nama</th>
+                        <th>Total Pesanan</th>
+                        <th>Total Harga</th>
+                        <th>Payment</th>
+                        <th>Status</th>
+                        <th>Alamat</th>
+                        <th>No Hp</th>
+                        <th>Waktu Pemesanan</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="orderanUsers">
+
+                </tbody>
+            </table>
+                <!-- <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nama</th>
+                            <th>Total Pesanan</th>
+                            <th>Total Harga</th>
+                            <th>Payment</th>
+                            <th>Status</th>
+                            <th>Alamat</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="ID">1</td>
+                            <td data-label="Nama">Sari Putriani</td>
+                            <td data-label="Total Pesanan">8</td>
+                            <td data-label="Total Harga">100000</td>
+                            <td data-label="Payment">BNI</td>
+                            <td data-label="Status"><span class="status-uncompleted">Uncompleted</span></td>
+                            <td data-label="Alamat">Jl.Komyos Sudarso Gg.Duku Baru Dalam no69b</td>
+                            <td data-label="Action"><a href="#"><i class="fas fa-eye"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td data-label="ID">1</td>
+                            <td data-label="Nama">Sari Putriani</td>
+                            <td data-label="Total Pesanan">8</td>
+                            <td data-label="Total Harga">100000</td>
+                            <td data-label="Payment">BNI</td>
+                            <td data-label="Status"><span class="status-uncompleted">Uncompleted</span></td>
+                            <td data-label="Alamat">Jl.Komyos Sudarso Gg.Duku Baru Dalam no69b</td>
+                            <td data-label="Action"><a href="#"><i class="fas fa-eye" id="topupBtn"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table> -->
+            </div>
+        </div>
+        <!-- end dashboard -->
+
+        <div class="main-order"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('lineChart');
+        const chartTitle = document.getElementById("chartTitle");
+
+        let chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Januari', 'Febuari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
+                datasets: [{
+                    label: '# of Votes',
+                    borderWidth: 1,
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)'
+                }]
+            },
+            options: {
+                responsive: true
+            }
+
+        });
+
+        // mengaktivekan card
+        function setActiveCard(cardId) {
+            document.querySelectorAll(".card").forEach(c => c.classList.remove("active-card"));
+            document.getElementById(cardId).classList.add("active-card");
+        }
+
+        document.getElementById("analisisOrder").addEventListener("click", function () {
+            setActiveCard("analisisOrder");
+            chart.data.datasets[0].label = "Jumlah Order";
+            chart.data.datasets[0].data = [12, 19, 3, 5, 2, 3, 8, 9, 1, 11, 9, 12],
+                chart.data.datasets[0].borderColor = 'rgba(54, 162, 235, 1)';
+            chart.data.datasets[0].backgroundColor = 'rgba(54, 162, 235, 0.2)';
+            document.getElementById("chartTitle").textContent = "Analisis Order";
+            chart.update();
+        });
+        document.getElementById("analisisInchome").addEventListener("click", function () {
+            setActiveCard("analisisInchome");
+            chart.data.datasets[0].label = "Jumlah Ichome";
+            chart.data.datasets[0].data = [12, 19, 3, 5, 2, 3, 8, 9, 1, 11, 9, 12],
+                chart.data.datasets[0].borderColor = 'rgba(255, 127, 131, 1)';
+            chart.data.datasets[0].backgroundColor = 'rgba(255, 127, 131, 0.2)';
+            document.getElementById("chartTitle").textContent = "Analisis Inchome";
+            chart.update();
+        });
+
+      fetch("data.json")
+        .then(response => response.json())
+        .then(data => {
+            const semuaOrderan = data.orderan;
+
+            // Ubah string tanggal seperti "Senin 09 Juli 2025" → jadi objek Date
+            function parseTanggal(tanggalStr) {
+                const parts = tanggalStr.split(" ");
+                const tanggalBaru = parts.slice(1).join(" "); // Buang "Senin"
+                return new Date(tanggalBaru);
+            }
+
+            // Ambil tanggal terbaru dari semua data
+            const tanggalTerbaru = semuaOrderan
+                .map(order => parseTanggal(order.waktu_pemesanan))
+                .sort((a, b) => b - a)[0]; // Terbesar = terbaru
+
+            // Filter: hanya orderan dengan tanggal terbaru dan status "Uncompleted"
+            const orderanTerbaru = semuaOrderan.filter(order =>
+                parseTanggal(order.waktu_pemesanan).getTime() === tanggalTerbaru.getTime() &&
+                order.Status.toLowerCase() === "uncompleted"
+            );
+
+            // Tampilkan hasilnya
+            tampilkanOrderan(orderanTerbaru);
+        });
+
+    function tampilkanOrderan(data) {
+        const tbody = document.getElementById("orderanUsers");
+        tbody.innerHTML = "";
+
+        data.forEach((item, index) => {
+            const viewIdAdmin = `view-${item.id}-${index}-${Date.now()}`;
+
+            const row = `
+                <tr>
+                    <td>${item.id}</td>
+                    <td>${item.Nama}</td>
+                    <td>${item.TotalPesanan}</td>
+                    <td>Rp${item.TotalHarga.toLocaleString()}</td>
+                    <td>${item.Payment}</td>
+                    <td><span class="status-${item.Status.toLowerCase()}">${item.Status}</span></td>
+                    <td>${item.Alamat}</td>
+                    <td>${item.no_hp}</td>
+                    <td>${item.waktu_pemesanan}</td>
+                    <td>
+                        <input type="checkbox" id="toggleView" />
+                        <label for="toggleView" class="fas fa-eye"></label>
+                        <div class="overlay">
+                            <div class="card-popup">
+                                <label for="toggleView" class="close-btn">&times;</label>
+                                <form>
+                                    <label>Nama:</label>
+                                    <input type="text" value="${item.Nama}" disabled><br>
+                                    <label>Total Pesanan:</label>
+                                    <input type="text" value="${item.TotalPesanan}" disabled><br>
+                                    <label>Total Harga:</label>
+                                    <input type="text" value="Rp${item.TotalHarga.toLocaleString()}" disabled><br>
+                                    <label>Payment:</label>
+                                    <input type="text" value="${item.Payment}" disabled><br>
+                                    <label>Status:</label>
+                                    <input type="text" value="${item.Status}" disabled><br>
+                                    <label>Alamat:</label>
+                                    <textarea disabled>${item.Alamat}</textarea><br>
+                                    <label>No HP:</label>
+                                    <input type="text" value="${item.no_hp}" disabled><br>
+                                    <label>Waktu Pemesanan:</label>
+                                    <input type="text" value="${item.waktu_pemesanan}" disabled><br>
+                                </form>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            `;
+            tbody.innerHTML += row;
+        });
+    }
+    </script>
+</body>
+
+</html>

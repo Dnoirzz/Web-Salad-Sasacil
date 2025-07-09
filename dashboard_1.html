@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salad Sasacil Dashboard</title>
+  <link rel="stylesheet" href="globals.css" />
+  <link rel="stylesheet" href="styleguide.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="dashboard-pelanggan">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="logo">
+        <img src="assets/images/sasacil logo.png" class="logo-img" />
+        <h1 class="logo-text"><span class="text-black">Salad</span> <span class="text-pink">Sasacil</span></h1>
+      </div>
+      <div class="user-profile">
+        <div class="user-avatar">
+          <img src="assets/img/IMG_6367.JPG" class="avatar-img" />
+        </div>
+        <div class="user-welcome">
+          <p>Welcome,</p>
+          <h2>Endang Listyowati</h2>
+        </div>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item active"><a href="#menu"><img src="assets/icon/Menu.png" /> Menu</a></li>
+        <li class="nav-item"><a href="order.html"><img src="assets/icon/order.png" /> Order</a></li>
+        <li class="nav-item"><a href="#"><img src="assets/icon/payment.png" /> Payment</a></li>
+        <li class="nav-item"><a href="index.html"><img src="assets/icon/logout.png" /> Logout</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main -->
+    <main>
+      <!-- Search -->
+      <div class="search-container">
+        <button><img src="assets/icon/search.png" /></button>
+        <input type="text" id="searchInput" placeholder="Search your today eat" />
+      </div>
+
+      <!-- Best Seller -->
+      <section class="best-seller">
+        <div class="best-seller-header">
+          <h2 class="best-seller-title">Best Seller</h2>
+          <a href="#" class="view-all" id="viewAllBtn">View all</a>
+        </div>
+        <div class="menu-grid" id="bestSellerGrid"></div>
+      </section>
+
+      <!-- Menu Section -->
+      <section class="menu-section">
+        <h2 class="menu" style="margin-left: 0;">Find the Menu You Want</h2>
+        <nav class="category-nav">
+          <ul>
+            <li><a href="#" class="category-link active" data-kategori="Salad">Salad</a></li>
+            <li><a href="#" class="category-link" data-kategori="Drink">Drink</a></li>
+            <li><a href="#" class="category-link" data-kategori="Makanan">Makanan</a></li>
+            <li><a href="#" class="category-link" data-kategori="Dimsum">Dimsum</a></li>
+            <li><a href="#" class="category-link" data-kategori="Seblak">Seblak</a></li>
+            <li><a href="#" class="category-link" data-kategori="Sushi">Sushi</a></li>
+          </ul>
+        </nav>
+        <div class="menu-grid" id="menuGrid"></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast">Item added to order!</div>
+
+  <script>
+    let allMenu = [];
+    let isViewAll = false; // <- Tambahan untuk toggle View All
+
+
+    fetch('data.json')
+      .then(res => res.json())
+      .then(data => {
+        allMenu = data.menu;
+        renderBestSeller(false);
+        renderMenuByCategory("Salad");
+      });
+
+    // Render best seller
+    function renderBestSeller(showAll = false) {
+      const grid = document.getElementById("bestSellerGrid");
+      grid.innerHTML = "";
+
+      const kategoriMap = {};
+      const sorted = [...allMenu].sort((a, b) => b.rating - a.rating);
+
+      for (let item of sorted) {
+        if (showAll || !kategoriMap[item.kategori]) {
+          kategoriMap[item.kategori] = true;
+          grid.innerHTML += renderCard(item, "menu-item");
+        }
+      }
+    }
+
+    document.getElementById("viewAllBtn").addEventListener("click", e => {
+      e.preventDefault();
+      isViewAll = !isViewAll;
+      renderBestSeller(isViewAll);
+      document.getElementById("viewAllBtn").textContent = isViewAll ? "Hide all" : "View all";
+    });
+
+
+    function renderMenuByCategory(kategori) {
+      const grid = document.getElementById("menuGrid");
+      grid.innerHTML = "";
+
+      const filtered = allMenu.filter(item => item.kategori.toLowerCase() === kategori.toLowerCase());
+      filtered.forEach(item => {
+        const className = "menu-item-2"; // Semua menu tampil dengan warna hijau
+        grid.innerHTML += renderCard(item, className);
+      });
+    }
+
+
+    function renderCard(item, className) {
+      const warna = className.includes("2") ? "#58dda6" : "#f48fb1";
+      return `
+        <article class="${className}">
+          <img src="${item.img}" alt="${item.nama_menu}" class="menu-img" />
+          <div class="menu-details">
+            <div class="${className.includes("2") ? 'rating-2' : 'rating'}" style="border-color: ${warna}">
+              <img src="assets/icon/bintang.png" class="star-icon" />
+              <span>${item.rating}</span>
+            </div>
+            <h3 class="name-menu">${item.nama_menu}</h3>
+            <p class="price">Rp ${item.harga.toLocaleString("id-ID")}</p>
+            <div class="btn-container">
+              <button class="${className.includes("2") ? 'order-btn-2' : 'order-btn'}"
+                onclick="addToOrder('${item.nama_menu}', ${item.harga}, '${item.img}', '${item.kategori}')">
+                Order Now
+              </button>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    document.querySelectorAll(".category-link").forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        document.querySelectorAll(".category-link").forEach(l => l.classList.remove("active"));
+        link.classList.add("active");
+        renderMenuByCategory(link.dataset.kategori);
+      });
+    });
+
+    document.getElementById("searchInput").addEventListener("input", function () {
+      const keyword = this.value.toLowerCase();
+      const grid = document.getElementById("menuGrid");
+      grid.innerHTML = "";
+
+      const filtered = allMenu.filter(item => item.nama_menu.toLowerCase().includes(keyword));
+      filtered.forEach(item => {
+        const className = "menu-item-2";
+        grid.innerHTML += renderCard(item, className);
+      });
+    });
+
+    function addToOrder(name, price, image, kategori) {
+      let items = JSON.parse(localStorage.getItem("orderItems")) || [];
+      const index = items.findIndex(item => item.name === name);
+
+      if (index > -1) {
+        items[index].quantity++;
+      } else {
+        items.push({ name, price, image, quantity: 1 });
+      }
+
+      localStorage.setItem("orderItems", JSON.stringify(items));
+      showToast(`${name} ditambahkan ke pesanan!`, kategori);
+    }
+
+    function showToast(message, kategori) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+
+      toast.className = "toast";
+      const cat = kategori.toLowerCase();
+
+      if (cat === "salad") toast.classList.add("toast-salad");
+      else if (cat === "drink") toast.classList.add("toast-drink");
+      else if (cat === "makanan") toast.classList.add("toast-makanan");
+      else if (cat === "dimsum") toast.classList.add("toast-dimsum");
+      else if (cat === "seblak") toast.classList.add("toast-seblak");
+      else if (cat === "sushi" || cat === "shusi") toast.classList.add("toast-sushi");
+      else toast.classList.add("toast-makanan");
+
+      toast.classList.add("show");
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3000);
+    }
+  </script>
+</body>
+
+</html>

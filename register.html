@@ -74,5 +74,32 @@
       </div>
     </div>
   </div>
+  <script>
+document.querySelector('.btn-register').addEventListener('click', function () {
+  const username = document.querySelectorAll('input')[0].value.trim();
+  const email = document.querySelectorAll('input')[1].value.trim();
+  const nohp = document.querySelectorAll('input')[2].value.trim();
+  const password = document.querySelectorAll('input')[3].value.trim();
+
+  if (!username || !email || !nohp || !password) {
+    alert('Semua field harus diisi');
+    return;
+  }
+
+  let users = JSON.parse(localStorage.getItem('users')) || [];
+
+  if (users.find(user => user.username === username)) {
+    alert('Username sudah terdaftar');
+    return;
+  }
+
+  users.push({ username, email, nohp, password });
+  localStorage.setItem('users', JSON.stringify(users));
+
+  alert('Registrasi berhasil');
+  window.location.href = 'login.html';
+});
+</script>
+
 </body>
 </html>

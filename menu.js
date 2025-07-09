@@ -1,4 +1,4 @@
-// Burger Menu Toggle
+        // Burger Menu Toggle
         const burgerMenu = document.querySelector('.burger-menu');
         const navContainer = document.querySelector('.nav-container');
 
