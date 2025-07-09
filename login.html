@@ -39,6 +39,9 @@
           <input type="password" name="password" placeholder="Password" required>
           <img src="assets/icon/lock-padlock-symbol-for-protect_icon-icons.com_56926.png" alt="lock">
         </div>
+        <div class="forgot">
+          <a href="#">Forgot Password?</a>
+        </div>
         <button type="submit" class="btn-login">Login</button>
       </form>
 
@@ -60,52 +63,52 @@
       </div>
     </div>
   </div>
-<script>
-  const form = document.querySelector('.login-form');
+  <script>
+    const form = document.querySelector('.login-form');
 
-  form.addEventListener('submit', async function (e) {
-    if (!form.checkValidity()) return; // Biarkan browser menampilkan pesan bawaan
-    e.preventDefault();
+    form.addEventListener('submit', async function (e) {
+      if (!form.checkValidity()) return; // Biarkan browser menampilkan pesan bawaan
+      e.preventDefault();
 
-    const username = form.username.value.trim();
-    const password = form.password.value.trim();
+      const username = form.username.value.trim();
+      const password = form.password.value.trim();
 
-    // Ambil data dari localStorage
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    const userFromLocal = users.find(u => u.username === username && u.password === password);
+      // Ambil data dari localStorage
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+      const userFromLocal = users.find(u => u.username === username && u.password === password);
 
-    // Admin hardcode
-    const admin = { username: 'admin', password: 'admin' };
-    if (username === admin.username && password === admin.password) {
-      window.location.href = 'admin.html';
-      return;
-    }
-
-    // Jika tidak ditemukan di localStorage, cek ke data.json
-    try {
-      const response = await fetch('data.json');
-      const data = await response.json();
-
-      const userFromJson = data.users.find(u => u.username === username && u.password === password);
-      const adminFromJson = data.admin.find(u => u.username === username && u.password === password);
-
-      if (adminFromJson) {
+      // Admin hardcode
+      const admin = { username: 'admin', password: 'admin' };
+      if (username === admin.username && password === admin.password) {
         window.location.href = 'admin.html';
-      } else if (userFromJson || userFromLocal) {
-        window.location.href = 'dashboard_1.html';
-      } else {
-        alert('Username atau password salah');
+        return;
       }
-    } catch (error) {
-      console.error('Gagal mengambil data JSON:', error);
-      if (userFromLocal) {
-        window.location.href = 'dashboard_1.html';
-      } else {
-        alert('Terjadi kesalahan saat login');
+
+      // Jika tidak ditemukan di localStorage, cek ke data.json
+      try {
+        const response = await fetch('data.json');
+        const data = await response.json();
+
+        const userFromJson = data.users.find(u => u.username === username && u.password === password);
+        const adminFromJson = data.admin.find(u => u.username === username && u.password === password);
+
+        if (adminFromJson) {
+          window.location.href = 'admin.html';
+        } else if (userFromJson || userFromLocal) {
+          window.location.href = 'dashboard_user.html';
+        } else {
+          alert('Username atau password salah');
+        }
+      } catch (error) {
+        console.error('Gagal mengambil data JSON:', error);
+        if (userFromLocal) {
+          window.location.href = 'dashboard_user.html';
+        } else {
+          alert('Terjadi kesalahan saat login');
+        }
       }
-    }
-  });
-</script>
+    });
+  </script>
 
 </body>
 
